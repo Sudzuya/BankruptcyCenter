@@ -1,3 +1,290 @@
 //====================================================================================================
+// ПЕРВЫЙ ЭКРАН
+.first-block {
+    margin-bottom: 40px;
+    &__body {
+        display: flex;
+        padding: 32px 48px;
+        background: #F4F9FF;
+        border-radius: 16px;
+        gap: 70px;
+    }
+
+    &__content {
+    }
+
+    &__title {
+        font-size: 48px;
+        font-family: Manrope;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    &__sub-title {
+        font-family: Manrope;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    &__advantages-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px 38px;
+        li{
+            flex: 1 1 33.333%;
+        }
+    }
+
+    &__form {
+    }
+}
+.form {
+    width: 360px;
+    flex: 0 0 auto;
+    padding: 30px 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 50px rgb(21 37 72 / 10%);
+    border-radius: 8px;
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-size: 14px;
+        opacity: 0.6;
+        margin-bottom: 16px;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        label{
+            margin-bottom: 4px;
+        }
+        input{
+            background: #FFFFFF;
+            border: 1px solid #C3CAD9;
+            border-radius: 4px;
+            padding: 13px 15px;
+        }
+    }
+
+    &__check {
+        display: flex;
+        font-size: 14px;
+        margin-bottom: 16px;
+        input{
+            margin-right: 14px;
+        }
+    }
+
+    &__submit {
+        padding: 16px 38px;
+        background: #1565D8;
+        border-radius: 8px;
+        color: #FFFFFF;
+        font-weight: 700;
+    }
+}
+// ВТОРОЙ ЭКРАН
+.two-block {
+    background: #1565D8;
+    color: #fff;
+    &__body {
+        padding: 64px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+
+    &__subtitle {
+        width: 654px;
+        margin-bottom: 40px
+    }
+
+    &__steps {
+    }
+
+    &__dop-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    &__dop-text{
+        width: 690px;
+        opacity: 0.6;
+        margin-bottom: 16px;
+    }
+
+    &__next {
+        padding: 15px 56px;
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__step-back {
+        padding: 14px 16px;
+        border: 2px solid #FFFFFF;
+        border-radius: 8px;
+    }
+
+    &__consultation {
+        padding: 14px 16px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        color: #1565D8;
+        font-weight: 700;
+    }
+}
+
+.steps {
+    margin-bottom: 56px;
+    &__list {
+        counter-reset: ol-numbers;
+        display: flex;
+    }
+    &__item {
+        position: relative;
+        height: 48px;
+        width: 48px;
+        flex: 0 0 auto;
+        border: 5px solid #FFFFFF;
+        border-radius: 50%;
+        gap: 138px;
+        &::before{
+            content: counter(ol-numbers);
+            counter-increment: ol-numbers;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: #36B37E;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+// ТРЕТИЙ ЭКРАН
+.three-block {
+    padding: 100px 0;
+
+    &__body {
+        display: flex;
+        gap: 100px;
+    }
+
+    &__img {
+        width: 504px;
+        height: 668px;
+        position: relative;
+        flex: 0 0 auto;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+        .logo{
+            position: absolute;
+            top: 34px;
+            left: 24px;
+        }
+    }
+
+    &__info {
+    }
+
+    &__title {
+        font-size: 36px;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        color: #5A7184;
+        margin-bottom: 24px;
+    }
+
+    &__advantagers {
+        padding-right: 205px;
+        margin-bottom: 16px;
+        li{
+            &:not(:last-child){
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__block-action {
+        display: flex;
+        gap: 36px;
+        button{
+            &:first-child{
+                padding: 15px 55px;
+                background: #1565D8;
+                border-radius: 8px;
+                color: #fff;
+            }
+            &:last-child{
+                color: #1565D8;
+            }
+        }
+    }
+}
+// ЧЕТВЕРТЫЙ ЭКРАН
+.four-block {
+
+    &__container {
+    }
+
+    &__body {
+    }
+
+    &__info {
+    }
+
+    &__title {
+    }
+
+    &__advantagers {
+    }
+
+    &__img {
+    }
+
+    &__logo {
+    }
+}
+.advantagers {
+
+    &__item {
+    }
+
+    &__img {
+    }
+
+    &__info {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
 
 //====================================================================================================

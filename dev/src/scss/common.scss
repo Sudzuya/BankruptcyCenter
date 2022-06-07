@@ -1,1 +1,29 @@
 // Заголовки, общие БЄМ блоки и проче...
+.border-style{
+    display: block;
+    background: #36B37E;
+    border-radius: 16px;
+    color: #fff;
+    padding: 7px;
+}
+.advantages-list{
+    &__item{
+        position: relative;
+        padding-left: 40px;
+        &::before{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            background-image: url('@img/icon/complite.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+    &__title{
+        font-weight: 600;
+    }
+}
