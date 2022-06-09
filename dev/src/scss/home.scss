@@ -31,6 +31,9 @@
         display: flex;
         flex-wrap: wrap;
         gap: 22px 38px;
+        div{
+            font-size: 16px;
+        }
         li{
             flex: 1 1 33.333%;
         }
@@ -39,57 +42,7 @@
     &__form {
     }
 }
-.form {
-    width: 360px;
-    flex: 0 0 auto;
-    padding: 30px 24px;
-    background: #FFFFFF;
-    box-shadow: 0px 15px 50px rgb(21 37 72 / 10%);
-    border-radius: 8px;
-    &__title {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 8px;
-    }
 
-    &__text {
-        font-size: 14px;
-        opacity: 0.6;
-        margin-bottom: 16px;
-    }
-
-    &__input {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 16px;
-        label{
-            margin-bottom: 4px;
-        }
-        input{
-            background: #FFFFFF;
-            border: 1px solid #C3CAD9;
-            border-radius: 4px;
-            padding: 13px 15px;
-        }
-    }
-
-    &__check {
-        display: flex;
-        font-size: 14px;
-        margin-bottom: 16px;
-        input{
-            margin-right: 14px;
-        }
-    }
-
-    &__submit {
-        padding: 16px 38px;
-        background: #1565D8;
-        border-radius: 8px;
-        color: #FFFFFF;
-        font-weight: 700;
-    }
-}
 // ВТОРОЙ ЭКРАН
 .two-block {
     background: #1565D8;
@@ -143,6 +96,8 @@
         border-radius: 8px;
     }
 
+    
+
     &__consultation {
         padding: 14px 16px;
         background: #FFFFFF;
@@ -151,19 +106,29 @@
         font-weight: 700;
     }
 }
-
+ 
 .steps {
     margin-bottom: 56px;
+    &__line{
+        flex: 0 0 auto;
+        height: 1px;
+        width: 190px;
+        background-color: #A1C1EF;
+        z-index: 1;
+    }
     &__list {
         counter-reset: ol-numbers;
         display: flex;
+        gap: 138px;
+        overflow: hidden;
     }
     &__item {
+        display: flex;
+        align-items: center;
         position: relative;
         height: 48px;
         width: 48px;
         flex: 0 0 auto;
-        border: 5px solid #FFFFFF;
         border-radius: 50%;
         gap: 138px;
         &::before{
@@ -177,6 +142,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 5px solid #FFFFFF;
+            z-index: 5;
         }
     }
 }
@@ -247,44 +214,670 @@
 }
 // ЧЕТВЕРТЫЙ ЭКРАН
 .four-block {
+    padding: 140px 0;
+    &__container {
+    }
 
+    &__body {
+        display: flex;
+        gap: 206px;
+    }
+
+    &__info {
+    }
+
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__advantagers {
+
+    }
+
+    &__img {
+        margin-right: 96px;
+        position: relative;
+    }
+
+    &__logo {
+        position: absolute;
+        bottom: 44px;
+        right: 29px;
+    }
+}
+.advantagers {
+
+    &__item {
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+            margin-bottom: 24px;
+        }
+    }
+
+    &__img {
+        margin-right: 42px;
+    }
+
+    &__info {
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &__text {
+    }
+}
+// ПЯТЫЙ ЭКРАН
+.five-block {
+    position: relative;
+    &__swiper {
+        
+    }
+}
+.swiper-team {
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+    &__wrapper{
+        display: flex;
+    }
+
+    &__slide {
+        display: flex;
+        gap: 202px;
+        padding: 0 20px;
+    }
+
+    &__slide-info {
+        flex: 0 1 auto;
+        width: 405px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    &__list {
+        margin-bottom: 17px;
+    }
+
+    &__link-full{
+        font-weight: 500;
+        color: #1565D8;
+    }
+    
+    &__slide-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 1 auto;
+        width: 575px;
+    }
+
+    &__slide-img-body{
+        width: 443px;
+        height: 300px;
+        position: relative;
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+        &::before{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(225deg, rgba(53, 109, 143, 0.5) 0%, rgba(24, 59, 86, 0.75) 100%);
+            opacity: 0.8;
+            z-index: 1;
+        }
+    }
+    
+    &__slide-img-text {
+        background: #FFFFFF;
+        box-shadow: 0px 12px 16px rgb(0 0 0 / 8%);
+        border-radius: 4px;
+        padding: 15px 0 15px 23px;
+        font-size: 16px;
+        font-style: italic;
+        margin-top: -30px;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6.6px;
+            z-index: 6;
+            background: #36B37E;
+        }
+    }
+    .swiper-team-pagination{
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        span{
+            width: 20px;
+            height: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::before,
+            &::after{
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                transition: all .2s ease-in-out;
+                cursor: pointer; 
+            }
+            &::before{
+                height: 20px;
+                width: 20px;
+                background: #C4C4C4;
+            }
+            &::after{
+                height: 100%;
+                width: 100%;
+                background: transparent;
+                border: 1px solid transparent;
+            }
+            &.swiper-pagination-bullet-active{
+                &::before{
+                    height: 16px;
+                    width: 16px; 
+                    background: #36B37E;
+                }
+                &::after{
+                    border: 1px solid #1565D8;
+                }
+            }
+        }
+    }
+}
+
+.swiper-team-navigation{
+    position: absolute;
+    max-width: 1330px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: 50px;
+        width: 50px;
+        &:first-child{
+            transform: scale(-1,1);
+        }
+    }
+}
+
+.advantages-list {
+
+    &__item {
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+    }
+}
+.slide-img-body {
+}
+// ШЕСТОЙ ЭКРАН
+.six-block {
+    margin-bottom: 120px;
+    &__container {
+    }
+
+    &__body {
+        display: flex;
+        padding: 64px 106px 46px 48px;
+        background: #1565D8;
+        border-radius: 16px;
+        gap: 100px;
+    }
+
+    &__info-body {
+        color: #fff;
+        padding-right: 105px;
+    }
+
+    &__info-text {
+        display: flex;
+    }
+
+    &__sub-title {
+        margin-bottom: 18px;
+    }
+
+    &__list {
+        margin-bottom: 24px;
+    }
+
+    &__link-full {
+    }
+
+    &__kviz {
+        padding: 32px;
+        background: #fff;
+        width: 385px;
+        flex: 0 0 auto;
+        border-radius: 8px;
+    }
+}
+.advantages-list {
+
+    &__item {
+    }
+}
+.kviz {
+
+    &__item {
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 800;
+        font-family: Manrope;
+        margin-bottom: 16px;
+    }
+
+    &__qestion {
+        display: flex;
+        align-items: center;
+        font-family: Manrope;
+        margin-bottom: 16px;
+        p{
+            font-size: 21px;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+    }
+
+    &__qestion-thist {
+        font-weight: 700;
+    }
+
+    &__qestion-full {
+        color: #5A7184;
+    }
+
+    &__question-full{
+        color: #5A7184;
+        font-size: 16px;
+    }
+
+    &__radio-inner {
+        margin-bottom: 16px;
+    }
+
+    &__qestion-text{
+        color: #5A7184;
+        margin-bottom: 16px;
+    }
+
+    &__radio-body {
+        display: flex;
+        align-items: center;
+        padding-left: 24px;
+    }
+
+    &__radio {
+    }
+
+    &__label {
+    }
+
+    &__submit {
+        padding: 10px 19px;
+        background: #36B37E;
+        border-radius: 5px;
+        color: #fff;
+    }
+}
+.separator {
+    margin: 0 5px;
+    color: #5A7184;
+}
+// СЕДМОЙ ЭКРАН
+.seven-block {
+    margin-bottom: 110px;
+    &__container {
+        max-width: 1020px;
+    }
+
+    &__body {
+    }
+
+    &__title {
+    }
+
+    &__content {
+    }
+
+    &__swiper {
+    }
+}
+.title {
+}
+.swiper-reviews {
+    overflow: hidden;
+    position: relative;
+    &__wrapper {
+        display: flex;
+    }
+
+    &__slide {
+        flex: 0 0 auto;
+    }
+
+    &__slide-item {
+        display: flex;
+        gap: 171px;
+    }
+
+    &__img {
+    }
+
+    &__info {
+    }
+
+    &__title-city {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    &__number {
+        color: #1565D8;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-bottom: 8px;
+    }
+
+    &__title {
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        margin-bottom: 21px;
+    }
+
+    &__full {
+        color: #1565D8;
+        font-weight: 600;
+        border-bottom: 1px dotted;
+        display: inline-block;
+    }
+}
+.seven-block-navigation{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    button{
+        height: 56px;
+        width: 56px;
+        padding: 21px;
+        &:first-child{
+            transform: scale(-1,1);
+        }
+    }
+}
+// ВОСЬМОЙ ЭКРАН
+.eight {
+    margin-bottom: 120px;
+    &__container {
+    }
+
+    &__body {
+        padding: 64px 68px 64px 48px;
+        background: #1565D8;
+        border-radius: 16px;
+        display: flex;
+        gap: 80px;
+    }
+
+    &__info {
+        color: #fff;
+    }
+
+    &__title {
+    }
+
+    &__sub-title {
+        margin-bottom: 24px;
+    }
+
+    &__list {
+        margin-bottom: 30px;
+    }
+
+    &__link-full {
+    }
+
+    &__spollers {
+        width: 426px;
+        flex: 0 0 auto;
+        background: #FFFFFF;
+        border-radius: 8px;
+        padding: 32px;
+    }
+}
+
+.advantages-list {
+
+    &__item {
+    }
+
+    &__title {
+    }
+}
+.spollers {
+
+    &__item {
+    }
+
+    &__title {
+        font-weight: 600;
+        text-align: start;
+        margin-bottom: 16px;
+        position: relative;
+        width: 100%;
+        &::before,
+        &::after{
+            content:"";
+            position: absolute;
+            background: #1565D8;
+        }
+        &::before{
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            height: rem(7.5);
+            width: rem(2.5);
+        }
+        &::after{
+            right: -2.5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: rem(7.5);
+            height: rem(2.5);
+        }
+    }
+
+    &__body {
+        font-size: 16px;
+        color: #5A7184;
+        margin-bottom: 16px;
+    }
+}
+// ДЕВЯТЫЙ ЭКРАН
+.nine {
+    background: #F4F9FF;
+    &__container {
+    }
+
+    &__body {
+        padding: 80px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__link-full {
+        padding: 8px 12px;
+        background: #1565D8;
+        border-radius: 8px;
+        color: #fff;
+    }
+
+    .spollers {
+        padding: 32px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        margin-bottom: 32px;
+        &__item {
+        }
+    
+        &__title {
+        }
+    
+        &__body {
+            padding-bottom: 27px;
+            border-bottom: 1px solid #E5EAF4;
+        }
+    }
+}
+// ДЕСЯТЫЙ БЛОК
+.ten-block {
+    margin-bottom: 120px;
     &__container {
     }
 
     &__body {
     }
 
+    &__content {
+        display: flex;
+        gap: 80px;
+        padding: 64px 134px 64px 48px;
+        background: #1565D8;
+        border-radius: 16px;
+    }
+
     &__info {
+        color: #fff;
     }
 
     &__title {
     }
 
-    &__advantagers {
+    &__sub-title {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px dashed #B3BAC5;
     }
 
-    &__img {
+    &__contact {
     }
 
-    &__logo {
+    &__form {
     }
 }
-.advantagers {
+.contact {
 
-    &__item {
+    &__title {
+        margin-bottom: 24px;
     }
 
-    &__img {
+    &__tell {
+        font-size: 36px;
+        margin-bottom: 24px;
+        display: inline-block;
     }
 
     &__info {
+        div{
+            &:not(:last-child){
+                margin-bottom: 8px;
+            }
+        }
     }
+
+    &__adress {
+    }
+
+    &__mail {
+    }
+
+    &__time {
+    }
+}
+.form {
 
     &__title {
     }
 
-    &__text {
+    &__input-body {
+    }
+
+    &__label {
+    }
+
+    &__input {
+    }
+
+    &__check-input {
+    }
+
+    &__chek {
+    }
+
+    &__check-label {
+    }
+
+    &__submit {
     }
 }
+
 
 //====================================================================================================

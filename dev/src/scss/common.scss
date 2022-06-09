@@ -1,10 +1,45 @@
 // Заголовки, общие БЄМ блоки и проче...
+a{
+    font-family: 'Manrope';
+    font-weight: 500;
+}
+button{
+    font-family: 'Manrope';
+    font-weight: 700;
+}
+.logo{
+    width: 227px;
+    height: 54px;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
 .border-style{
     display: block;
     background: #36B37E;
     border-radius: 16px;
     color: #fff;
-    padding: 7px;
+    padding: 10px;
+    font-size: 36px;
+    font-weight: 600;
+}
+.border-style-white{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    h2{
+        display: block;
+        font-family: Manrope;
+        span{
+            display: inline-block;
+            background: #fff;
+            color: #1565D8;
+            border-radius: 8px;
+            padding: 4px 10px;
+        }
+    }
 }
 .advantages-list{
     &__item{
@@ -25,5 +60,77 @@
     }
     &__title{
         font-weight: 600;
+    }
+}
+.title{
+    font-family: 'Manrope';
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 64px;
+}
+.form {
+    width: 360px;
+    flex: 0 0 auto;
+    padding: 30px 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 50px rgb(21 37 72 / 10%);
+    border-radius: 8px;
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0.6;
+        margin-bottom: 16px;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        label{
+            font-family: 'Manrope';
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        input{
+            background: #FFFFFF;
+            border: 1px solid #C3CAD9;
+            border-radius: 4px;
+            padding: 13px 15px;
+            font-size: 16px;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    &__check {
+        display: flex;
+        font-size: 14px;
+        margin-bottom: 16px;
+        input{
+            flex: 0 0 auto;
+            margin-right: 14px;
+            width: 18px;
+            height: 18px;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+
+    &__submit {
+        padding: 16px 38px;
+        background: #1565D8;
+        border-radius: 8px;
+        color: #FFFFFF;
+        font-weight: 700;
     }
 }

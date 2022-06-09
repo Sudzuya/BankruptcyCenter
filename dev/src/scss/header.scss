@@ -39,10 +39,11 @@
 	}
 
 	&__logo {
-		flex: 1 1 auto;
+		margin-right: auto;
 	}
 
 	&__watsapp {
+		width: 255px;
 	}
 
 	&__phone {
@@ -66,11 +67,27 @@
 
 	&__link-item {
 		margin-right: 60px;
+		padding-right: 20px;
 		color: #1565D8;
+		font-weight: 700;
+		position: relative;
+		&::before{
+			content:"";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			height: rem(16);
+			width: rem(8);
+			background-image: url('@img/icon/arrow-blue.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
 	}
 }
 .location {
-
+	font-family: "Manrope";
 	&__city {
 		display: flex;
 		align-items: center;
@@ -96,12 +113,19 @@
 	}
 	&__img {
 		margin-right: 8px;
+		height: 32px;
+		width: 32px;
+		flex: 0 0 auto;
+		img{
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
+		}
 	}
 
 	&__link {
 		display: flex;
     	flex-direction: column;
-		width: 225px;
 	}
 }
 .info {
