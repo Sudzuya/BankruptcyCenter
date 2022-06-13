@@ -187,6 +187,117 @@ function initSliders() {
 			}
 		});
 	}
+	if (document.querySelector('.steps-swiper')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.steps-swiper', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			wrapperClass:'steps-swiper__wrapper',
+			slideClass:'steps-swiper__slide',
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			
+			pagination: {
+				el: '.steps-swiper__dots',
+				clickable: true,
+				bulletElement:'li',
+				bulletClass:'steps-swiper__dots-item',
+				bulletActiveClass:'active__dots',
+				lockClass:'da131'
+			},
+			
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.steps-swiper__btn-prev',
+				nextEl: '.steps-swiper__btn-next',
+			},
+
+			// Брейкпоинты
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// События
+			on: {
+
+				stepActive(){
+					let buttonNext = document.querySelector('.steps-swiper__btn-next')
+					buttonNext.addEventListener('click', function(){
+					})
+				},
+
+				slideChange(){
+					// let step = document.querySelectorAll('.steps-swiper__dots');
+					// let steps = document.querySelectorAll('.steps-swiper__dots-item');
+
+					// let buttonNext = document.querySelector('.steps-swiper__btn-next')
+					
+					// let counter = this.activeIndex % steps.length
+
+					// if (this.activeIndex == Number(steps[0])){
+					// 	console.log('da');
+					// }
+					// console.log(steps[0]);
+
+				},
+				// activeIndexChange(index){
+				// 	let steps = document.querySelectorAll('.steps-swiper__dots-item')
+				// 	steps.forEach(function(e){
+				// 	})
+				// 	console.log(index.activeIndex);
+
+				// }
+			}
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {

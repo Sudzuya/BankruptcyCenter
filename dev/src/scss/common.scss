@@ -3,13 +3,93 @@ a{
     font-family: 'Manrope';
     font-weight: 500;
 }
+.hidden{
+    display: none;
+}
 button{
     font-family: 'Manrope';
     font-weight: 700;
+    border-radius: 8px;
+}
+.button-blue{
+    padding: 15px 55px;
+    background: #1565D8;
+    color: #fff;
+    @media (max-width:576px) {
+        padding: 5px 55px;
+    }
+}
+.button-white{
+    padding: 14px 24px;
+    background: #FFFFFF;
+    font-weight: 700;
+}
+.button-next{
+    padding: 14px 50px 14px 24px;
+    position: relative;
+    color: #1565D8;
+    @media (max-width:440px) {
+        padding: 10px 32px 10px 10px;
+    }
+    &::before{
+        content:"";
+        position: absolute;
+        top: 50%;
+        right: 28px;
+        transform: translateY(-50%);
+        height: 12px;
+        width: 12px;
+        background-image: url('@img/icon/arrow_button.svg');
+        @media (max-width:440px) {
+            right: 14px;
+        }
+    }
+}
+.button-next-white{
+    padding: 14px 50px 14px 24px;
+    position: relative;
+    color: #fff;
+    @media (max-width:440px) {
+        padding: 10px 32px 10px 10px;
+    }
+    &::before{
+        content:"";
+        position: absolute;
+        top: 50%;
+        right: 28px;
+        transform: translateY(-50%);
+        height: 12px;
+        width: 12px;
+        background-image: url('@img/icon/arrow-white.svg');
+        @media (max-width:440px) {
+            right: 14px;
+        }
+    }
+}
+.button-back{
+    padding: 14px 24px 14px 50px;
+    position: relative;
+    color: #1565D8;
+    @media (max-width:440px) {
+        padding: 10px 32px 10px 10px;
+    }
+    &::before{
+        content:"";
+        position: absolute;
+        top: 50%;
+        left: 28px;
+        transform: translateY(-50%);
+        height: 12px;
+        width: 12px;
+        background-image: url('@img/icon/arrow-prev-green.svg');
+        @media (max-width:440px) {
+            right: 14px;
+        }
+    }
 }
 .logo{
-    width: 227px;
-    height: 54px;
+    @include adaptiveValue("width",277 ,103, 992, 768, 1 );
+    @include adaptiveValue("height",54 ,20, 992, 768, 1 );
     img{
         height: 100%;
         width: 100%;
@@ -22,13 +102,17 @@ button{
     border-radius: 16px;
     color: #fff;
     padding: 10px;
-    font-size: 36px;
     font-weight: 600;
+    @include adaptiveValue("font-size", 36 , 32, 1200, 991, 1 );
+        @include adaptiveValue("font-size", 32 , 24, 991, 768, 1 );
+
+
 }
 .border-style-white{
-    font-size: 36px;
     font-weight: 600;
     margin-bottom: 12px;
+    @include adaptiveValue("font-size", 36 , 32, 1200, 991, 1 );
+
     h2{
         display: block;
         font-family: Manrope;
@@ -45,6 +129,9 @@ button{
     &__item{
         position: relative;
         padding-left: 40px;
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
         &::before{
             content:"";
             position: absolute;
@@ -58,16 +145,23 @@ button{
             background-position: center;
         }
     }
-    &__title{
+
+    &__title {
+        margin-bottom: 5px;
         font-weight: 600;
+
+        @include adaptiveValue("gap",22 ,20, 1200, 991, 1 );
     }
+
 }
 .title{
     font-family: 'Manrope';
     font-size: 48px;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 64px;
+    @include adaptiveValue("font-size", 48 , 32, 1200, 991, 1 );
+    @include adaptiveValue("margin-bottom",64 ,15, 992, 768, 1 );
+
 }
 .form {
     width: 360px;
@@ -76,8 +170,13 @@ button{
     background: #FFFFFF;
     box-shadow: 0px 15px 50px rgb(21 37 72 / 10%);
     border-radius: 8px;
+    height: max-content;
+    @media (max-width:768px) {
+        padding: 24px 12px;
+        width: 100%;
+    }
     &__title {
-        font-size: 24px;
+        @include adaptiveValue("font-size",24 ,20, 992, 768, 1 );
         font-weight: 700;
         margin-bottom: 8px;
     }
@@ -132,5 +231,11 @@ button{
         border-radius: 8px;
         color: #FFFFFF;
         font-weight: 700;
+        @media (max-width:768px) {
+            width: 100%;
+        }
+        @media (max-width:576px) {
+            padding: 5px 38px;
+        }
     }
 }

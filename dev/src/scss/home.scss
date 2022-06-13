@@ -8,16 +8,25 @@
         background: #F4F9FF;
         border-radius: 16px;
         gap: 70px;
+        @include adaptiveValue("gap", 70 , 20, 1200, 991, 1 );
+        @media (max-width:992px) {
+            padding: 24px 0 0;
+        
+        }
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
     }
 
     &__content {
     }
 
     &__title {
-        font-size: 48px;
         font-family: Manrope;
         font-weight: 600;
         margin-bottom: 16px;
+        @include adaptiveValue("font-size", 48 , 32, 1200, 991, 1 );
+            @include adaptiveValue("font-size", 32 , 24, 991, 768, 1 );
     }
 
     &__sub-title {
@@ -30,12 +39,19 @@
     &__advantages-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 22px 38px;
+        @include adaptiveValue("row-gap",22 , 10, 1200, 991, 1 );
+        @include adaptiveValue("column-gap",38 , 10, 1200, 991, 1 );
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
         div{
             font-size: 16px;
         }
         li{
             flex: 1 1 33.333%;
+            @media (max-width:992px) {
+                flex-basis: 50%;
+            }
         }
     }
 
@@ -53,16 +69,23 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        @include adaptiveValue("padding-top",64 ,15, 991, 768, 1 );
+        @include adaptiveValue("padding-bottom",64 ,40, 991, 768, 1 );
     }
 
     &__title {
-        font-size: 36px;
+        // font-size: 36px;
         margin-bottom: 16px;
     }
 
     &__subtitle {
         width: 654px;
-        margin-bottom: 40px
+        margin-bottom: 40px;
+        @include adaptiveValue("margin-bottom",40 ,25, 991, 768, 1 );
+        @include adaptiveValue("width",654 ,576, 991, 576, 1 );
+        @media (max-width:576px) {
+            width: 100%;
+        }
     }
 
     &__steps {
@@ -88,6 +111,14 @@
         display: flex;
         align-items: center;
         gap: 16px;
+        &.active{
+            .two-block__consultation{
+                display: inline-block;
+            }
+            .two-block__step-next{
+                display: none;
+            }
+        }
     }
 
     &__step-back {
@@ -96,64 +127,215 @@
         border-radius: 8px;
     }
 
-    
 
     &__consultation {
-        padding: 14px 16px;
-        background: #FFFFFF;
-        border-radius: 8px;
-        color: #1565D8;
-        font-weight: 700;
+        display: none;
+        &.active{
+            display: inline-block;
+        }
     }
 }
  
+.steps-swiper{
+    width: 688px;
+    @include adaptiveValue("width",688 ,576, 768, 576, 1 );
+    margin-bottom: 26px;
+    overflow: hidden;
+    @media (max-width:576px) {
+        width: 100%;
+    }
+    &__dots{
+        margin-bottom: 12px;
+        counter-reset: ol-numbers;
+        display: flex;
+        gap: 138px;
+        overflow: hidden;
+        margin-bottom: 56px;
+        @include adaptiveValue("gap", 138 , 90, 1200, 991, 1 );
+            @include adaptiveValue("gap",90 ,28, 991, 768, 1 );
+                @include adaptiveValue("gap",28 ,15, 768, 320, 1 );
+        @include adaptiveValue("margin-bottom",56 ,25, 991, 768, 1 );
+        
+    }
+    &__dots-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        @include adaptiveValue("height",48 ,33, 768, 320, 1 );
+        @include adaptiveValue("width",48 ,33, 768, 320, 1 );
+        flex: 0 0 auto;
+        border-radius: 50%;
+        gap: 138px;
+        cursor: pointer;
+        &:last-child{
+            .steps__line{
+                display: none;
+            }
+        }
+        &.active__dots{
+            &::before{
+                background: #36B37E;
+                color: #fff;
+            }
+            &::after{
+                border: 5px solid #FFFFFF;
+            }
+        }
+        &::before{
+            content: counter(ol-numbers);
+            counter-increment: ol-numbers;
+            position: absolute;
+            @include adaptiveValue("height",38 ,29, 768, 320, 1 );
+            @include adaptiveValue("width",38 ,29, 768, 320, 1 );
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            color: #1565D8;
+        }
+        &::after{
+            content:"";
+            position: absolute; 
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid transparent;
+        }
+    }
+    &__wrapper{
+        display: flex;
+    }
+    &__slide{
+        flex: 0 0 auto;
+    }
+    &__title{
+        font-family: 'Manrope';
+        font-weight: 700;
+        line-height: 48px;
+        margin-bottom: 16px;
+        @include adaptiveValue("font-size", 36 , 32, 1200, 991, 1 );
+            @include adaptiveValue("font-size", 32 , 18, 768, 320, 1 );
+        @include adaptiveValue("margin-bottom", 16 , 4, 768, 320, 1 );
+        @media (max-width:768px) {
+            line-height: normal;
+        }
+    }
+    &__text{
+        line-height: 31px;
+        opacity: 0.6;
+        margin-bottom: 27px;
+        @include adaptiveValue("margin-bottom",27 ,16, 991, 768, 1 );
+            @include adaptiveValue("font-size", 16 , 14, 768, 320, 1 );
+    }
+    &__navigation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        @media (max-width:440px) {
+            font-size: 15px;
+        }
+    }
+    &__btn-prev{
+        padding: 14px 16px;
+        border: 2px solid #FFFFFF;
+        border-radius: 8px;
+        @media (max-width:440px) {
+            padding: 10px;
+        }
+    }
+}
+
 .steps {
-    margin-bottom: 56px;
+    margin-bottom: 12px;
     &__line{
+        position: absolute;
+        left: 50%;
         flex: 0 0 auto;
         height: 1px;
-        width: 190px;
+        width: 185px;
         background-color: #A1C1EF;
         z-index: 1;
+    }
+    &__info{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        &.active{
+            display: flex;
+        }
     }
     &__list {
         counter-reset: ol-numbers;
         display: flex;
         gap: 138px;
         overflow: hidden;
+        margin-bottom: 56px;
     }
     &__item {
         display: flex;
         align-items: center;
+        justify-content: center;
         position: relative;
         height: 48px;
         width: 48px;
         flex: 0 0 auto;
         border-radius: 50%;
         gap: 138px;
+        &:last-child{
+            .steps__line{
+                display: none;
+            }
+        }
+        &.active{
+            &::before{
+                background: #36B37E;
+                color: #fff;
+            }
+            &::after{
+                border: 5px solid #FFFFFF;
+            }
+        }
         &::before{
             content: counter(ol-numbers);
             counter-increment: ol-numbers;
             position: absolute;
-            height: 100%;
-            width: 100%;
-            background: #36B37E;
+            height: 38px;
+            width: 38px;
+            background: #fff;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 5px solid #FFFFFF;
             z-index: 5;
+            color: #1565D8;
+        }
+        &::after{
+            content:"";
+            position: absolute; 
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid transparent;
         }
     }
 }
 // ТРЕТИЙ ЭКРАН
 .three-block {
     padding: 100px 0;
+    @include adaptiveValue("padding-top",100 , 32, 1200, 768, 1 );
+    @include adaptiveValue("padding-bottom",100 , 32, 1200, 768, 1 );
 
     &__body {
         display: flex;
-        gap: 100px;
+        @include adaptiveValue("gap",100 , 50, 1200, 991, 1 );
+            @include adaptiveValue("gap",50 , 24, 991, 768, 1 );
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__img {
@@ -161,15 +343,29 @@
         height: 668px;
         position: relative;
         flex: 0 0 auto;
+        @include adaptiveValue("width",504 , 400, 1200, 991, 1 );
+        @include adaptiveValue("height",668 , 530, 1200, 991, 1 );
+        @media (max-width:768px) {
+            width: 100%;
+            height: 350px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
         img{
             height: 100%;
             width: 100%;
             object-fit: contain;
+            @media (max-width:768px) {
+                object-fit: cover;
+            }
         }
         .logo{
             position: absolute;
-            top: 34px;
-            left: 24px;
+            @include adaptiveValue("top",34 , 20, 1200, 991, 1 );
+            @include adaptiveValue("left",24 , 20, 1200, 991, 1 );
+            img{
+                object-fit: contain;
+            }
         }
     }
 
@@ -177,18 +373,20 @@
     }
 
     &__title {
-        font-size: 36px;
-        margin-bottom: 24px;
+        @include adaptiveValue("margin-bottom",24 , 19, 991, 768, 1 );
     }
 
     &__text {
         color: #5A7184;
-        margin-bottom: 24px;
+        @include adaptiveValue("margin-bottom",24 , 15, 991, 768, 1 );
     }
 
     &__advantagers {
         padding-right: 205px;
         margin-bottom: 16px;
+        @media (max-width:992px) {
+            padding-right: 0;
+        }
         li{
             &:not(:last-child){
                 margin-bottom: 16px;
@@ -199,6 +397,12 @@
     &__block-action {
         display: flex;
         gap: 36px;
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+            &:first-child{
+                width: 100%;
+            }
+        }
         button{
             &:first-child{
                 padding: 15px 55px;
@@ -215,12 +419,21 @@
 // ЧЕТВЕРТЫЙ ЭКРАН
 .four-block {
     padding: 140px 0;
+    @include adaptiveValue("padding-top",140 , 32, 1200, 768, 1 );
+    @include adaptiveValue("padding-bottom",140 , 32, 1200, 768, 1 );
     &__container {
     }
 
     &__body {
         display: flex;
-        gap: 206px;
+        @include adaptiveValue("gap",206 ,96, 1200, 991, 1 );
+            @include adaptiveValue("gap",96 ,10, 991, 576, 1 );
+        @media (max-width:768px) {
+            align-items: center; 
+        }
+        @media (max-width:576px) {
+            flex-direction: column;
+        }
     }
 
     &__info {
@@ -237,26 +450,50 @@
     &__img {
         margin-right: 96px;
         position: relative;
+        @include adaptiveValue("height",576 ,435, 991, 768, 1 );
+        @include adaptiveValue("gap",96 ,10, 991, 576, 1 );
+            @include adaptiveValue("margin-right",96 ,0, 991, 576, 1 );
+        flex: 0 0 auto;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
     }
 
     &__logo {
         position: absolute;
-        bottom: 44px;
+        @include adaptiveValue("width",227 ,169, 992, 768, 1 );
+        @include adaptiveValue("height",54 ,40, 992, 768, 1 );
+        @include adaptiveValue("bottom",44 ,21, 992, 768, 1 );
         right: 29px;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
     }
 }
 .advantagers {
 
     &__item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         &:not(:last-child){
             margin-bottom: 24px;
         }
     }
 
     &__img {
-        margin-right: 42px;
+        @include adaptiveValue("height",85 ,48, 991, 768, 1 );
+        @include adaptiveValue("width",85 ,48, 991, 768, 1 );
+        @include adaptiveValue("margin-right",42 ,18, 991, 768, 1 );
+        flex: 0 0 auto;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
     }
 
     &__info {
@@ -266,6 +503,8 @@
         margin-bottom: 12px;
         font-size: 24px;
         font-weight: 700;
+        @include adaptiveValue("font-size",24 ,20, 991, 768, 1 );
+
     }
 
     &__text {
@@ -288,13 +527,21 @@
 
     &__slide {
         display: flex;
-        gap: 202px;
-        padding: 0 20px;
+        flex: 0 0 auto;
+        @include adaptiveValue("gap",202 ,40, 1200, 991, 1 );
+            @include adaptiveValue("gap",40 ,15, 991, 768, 1 );
+        padding: 0 30px;
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__slide-info {
         flex: 0 1 auto;
         width: 405px;
+        @media (max-width:768px) {
+            width: 100%;
+        }
     }
 
     &__title {
@@ -302,8 +549,8 @@
     }
 
     &__text {
-        font-size: 22px;
         margin-bottom: 16px;
+        @include adaptiveValue("gap",22 ,18, 1200, 991, 1 );
     }
 
     &__list {
@@ -321,6 +568,10 @@
         align-items: center;
         flex: 0 1 auto;
         width: 575px;
+        @media (max-width:768px) {
+            align-items: flex-start;
+            width: 100%;
+        }
     }
 
     &__slide-img-body{
@@ -330,6 +581,9 @@
         text-align: center;
         border-radius: 20px;
         overflow: hidden;
+        @media (max-width:768px) {
+            width: 100%;
+        }
         &::before{
             content:"";
             position: absolute;
@@ -343,6 +597,18 @@
         }
     }
     
+    &__link-full{
+        &.mobile{
+            display: none;
+        }
+        @media (max-width:768px) {
+            display: none;
+            &.mobile{
+                display: inline-block;
+            }
+        }
+    }
+
     &__slide-img-text {
         background: #FFFFFF;
         box-shadow: 0px 12px 16px rgb(0 0 0 / 8%);
@@ -369,6 +635,10 @@
         display: flex;
         justify-content: center;
         gap: 16px;
+        margin-top: 40px;
+        @media (max-width:768px) {
+            display: none;
+        }
         span{
             width: 20px;
             height: 20px;
@@ -433,27 +703,11 @@
     }
 }
 
-.advantages-list {
-
-    &__item {
-        &:not(:last-child){
-            margin-bottom: 16px;
-        }
-    }
-
-    &__title {
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-
-    &__text {
-    }
-}
 .slide-img-body {
 }
 // ШЕСТОЙ ЭКРАН
 .six-block {
-    margin-bottom: 120px;
+    @include adaptiveValue("margin-bottom",120 ,15, 992, 768, 1 );
     &__container {
     }
 
@@ -462,12 +716,31 @@
         padding: 64px 106px 46px 48px;
         background: #1565D8;
         border-radius: 16px;
-        gap: 100px;
+        @include adaptiveValue("gap",100 ,50, 1200, 991, 1 );
+            @include adaptiveValue("gap",50 ,10, 991, 768, 1 );
+        @media (max-width:992px) {
+            @include adaptiveValue("padding",40 ,15, 992, 768, 1 );
+            margin: 0 -20px;
+        }
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__info-body {
         color: #fff;
         padding-right: 105px;
+        @media (max-width:768px) {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    &__title{
+        @include adaptiveValue("font-size",32 ,24, 992, 768, 1 );
+        @media (max-width:768px) {
+            text-align: center;
+        }
     }
 
     &__info-text {
@@ -485,12 +758,15 @@
     &__link-full {
     }
 
-    &__kviz {
-        padding: 32px;
+    &__quiz {
+        @include adaptiveValue("padding",32 ,15, 992, 768, 1 );
         background: #fff;
         width: 385px;
         flex: 0 0 auto;
         border-radius: 8px;
+        @media (max-width:768px) {
+            width: 100%;
+        }
     }
 }
 .advantages-list {
@@ -498,16 +774,24 @@
     &__item {
     }
 }
-.kviz {
+.quiz {
+
+    .quiz-inner{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
 
     &__item {
     }
 
     &__title {
-        font-size: 32px;
+        @include adaptiveValue("font-size",32 ,24, 992, 768, 1 );
         font-weight: 800;
         font-family: Manrope;
         margin-bottom: 16px;
+
     }
 
     &__qestion {
@@ -547,20 +831,58 @@
     &__radio-body {
         display: flex;
         align-items: center;
-        padding-left: 24px;
     }
 
     &__radio {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
     }
 
     &__label {
+        position: relative;
     }
 
-    &__submit {
+    .quiz__radio+label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        cursor: pointer;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border-radius: 50%;
+            border: 1px solid #36B37E;
+            margin-right: 7px;
+        }
+        &::after{
+            content:"";
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+            background: transparent;
+        }
+      }
+      .quiz__radio:checked+label{
+        &::after {
+            position: absolute;
+            left: 5px;
+            background: #36B37E;
+        }
+      }
+
+    &__next {
+        display: inline-block;
         padding: 10px 19px;
         background: #36B37E;
         border-radius: 5px;
         color: #fff;
+        cursor: pointer;
     }
 }
 .separator {
@@ -569,7 +891,7 @@
 }
 // СЕДМОЙ ЭКРАН
 .seven-block {
-    margin-bottom: 110px;
+    @include adaptiveValue("margin-bottom",110 ,15, 992, 768, 1 );
     &__container {
         max-width: 1020px;
     }
@@ -602,6 +924,10 @@
     &__slide-item {
         display: flex;
         gap: 171px;
+        @include adaptiveValue("gap",171 ,16, 992, 768, 1 );
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__img {
@@ -645,6 +971,7 @@
     right: 0;
     display: flex;
     align-items: center;
+
     button{
         height: 56px;
         width: 56px;
@@ -657,6 +984,7 @@
 // ВОСЬМОЙ ЭКРАН
 .eight {
     margin-bottom: 120px;
+    @include adaptiveValue("margin-bottom",120 ,30, 992, 768, 1 );
     &__container {
     }
 
@@ -665,7 +993,15 @@
         background: #1565D8;
         border-radius: 16px;
         display: flex;
-        gap: 80px;
+        @include adaptiveValue("gap",80 ,50, 1200, 991, 1 );
+            @include adaptiveValue("gap",50 ,12, 991, 768, 1 );
+        @media (max-width:992px) {
+            @include adaptiveValue("padding",40 ,15, 992, 768, 1 );
+            margin: 0 -20px;
+        }
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__info {
@@ -692,6 +1028,9 @@
         background: #FFFFFF;
         border-radius: 8px;
         padding: 32px;
+        @media (max-width:768px) {
+            width: 100%;
+        }
     }
 }
 
@@ -714,6 +1053,7 @@
         margin-bottom: 16px;
         position: relative;
         width: 100%;
+        font-size: rem(20);
         &::before,
         &::after{
             content:"";
@@ -749,11 +1089,13 @@
     }
 
     &__body {
-        padding: 80px 0;
+        @include adaptiveValue("padding-top",80 ,15, 992, 768, 1 );
+        @include adaptiveValue("padding-bottom",80 ,15, 992, 768, 1 );
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        
     }
 
     &__title {
@@ -764,10 +1106,7 @@
     }
 
     &__link-full {
-        padding: 8px 12px;
-        background: #1565D8;
-        border-radius: 8px;
-        color: #fff;
+        border-radius: 8px; 
     }
 
     .spollers {
@@ -789,7 +1128,7 @@
 }
 // ДЕСЯТЫЙ БЛОК
 .ten-block {
-    margin-bottom: 120px;
+    @include adaptiveValue("margin-bottom",120 ,50, 992, 768, 1 );
     &__container {
     }
 
@@ -802,6 +1141,12 @@
         padding: 64px 134px 64px 48px;
         background: #1565D8;
         border-radius: 16px;
+        @include adaptiveValue("gap",80 ,50, 1200, 991, 1 );
+            @include adaptiveValue("gap",50 ,10, 991, 768, 1 );
+        @media (max-width:992px) {
+            @include adaptiveValue("padding",40 ,15, 992, 768, 1 );
+            margin: 0 -20px;
+        }
     }
 
     &__info {
@@ -809,6 +1154,12 @@
     }
 
     &__title {
+        @media (max-width:768px) {
+            span{
+                width: 100%;
+                text-align: center;
+            }
+        }
     }
 
     &__sub-title {

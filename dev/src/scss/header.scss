@@ -12,6 +12,9 @@
     	align-items: center;
 		justify-content: space-between;
 		padding: 23px 0;
+		@media (max-width:992px) {
+			display: none;
+		}
 	}
 
 	&__location {
@@ -44,6 +47,7 @@
 
 	&__watsapp {
 		width: 255px;
+		margin-right: 38px;
 	}
 
 	&__phone {
@@ -52,17 +56,24 @@
 	&__info {
 		display: flex;
 		justify-content: space-between;
-		padding: 16px 0;
 		border-top: 1px solid #c3cad947;
 		border-bottom: 1px solid #c3cad947;
+		@media (max-width:992px) {
+			display: none;
+		}
 	}
 
 	&__info-link {
+		display: inline-flex;
+		padding: 16px 0;
 	}
 
 	&__link {
 		padding: 25px 0 40px;
 		font-weight: 700;
+		@media (max-width:992px) {
+			display: none;
+		}
 	}
 
 	&__link-item {
@@ -85,7 +96,96 @@
 			background-position: center;
 		}
 	}
+
+	&__info-item{
+		position: relative;
+		&:hover{
+			.header__list-deep{
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+	}
+
+	&__list-deep{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		z-index: 5;
+		pointer-events: none;
+	}
+
+	&__phone-mobile{
+		height: 26px;
+		width: 26px;
+		border: 2px solid #1565D8;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		margin-right: 16px;
+		@media (max-width:992px) {
+			display: flex;
+		}
+	}
+	&__burger{
+		position: relative;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		height: 24px;
+		width: 24px;
+		@media (max-width:992px) {
+			display: flex;
+		}
+		div{
+			width: 100%;
+			height: 3px;
+			background: #183B56;
+			border-radius: 1px;
+		}
+		&::before,
+		&::after{
+			content:"";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: #183B56;
+			border-radius: 1px;
+		}
+		&::before{
+			top: 0;
+		}
+		&::after{
+			bottom: 0;
+		}
+	}
 }
+
+.list-deep{
+	padding: 12px;
+	background: #FFFFFF;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 5px;
+	&__item{
+		&:not(:last-child){
+			margin-bottom: 16px;
+		}
+	}
+	&__link{
+		padding: 5px 0;
+		opacity: 0.5;
+		transition: opacity .5s ease;
+		&:hover{
+			opacity: 1;
+			font-weight: 700;
+		}
+	}
+}
+
 .location {
 	font-family: "Manrope";
 	&__city {
@@ -108,8 +208,8 @@
 .social-info {
     display: flex;
 	align-items: center;
-	&:not(:last-child){
-		margin-right: 38px;
+	@media (max-width:992px) {
+		display: none;
 	}
 	&__img {
 		margin-right: 8px;

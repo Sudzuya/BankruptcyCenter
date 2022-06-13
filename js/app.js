@@ -3632,6 +3632,36 @@
             },
             on: {}
         });
+        if (document.querySelector(".steps-swiper")) new core(".steps-swiper", {
+            wrapperClass: "steps-swiper__wrapper",
+            slideClass: "steps-swiper__slide",
+            modules: [ Navigation, Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            autoHeight: true,
+            speed: 800,
+            pagination: {
+                el: ".steps-swiper__dots",
+                clickable: true,
+                bulletElement: "li",
+                bulletClass: "steps-swiper__dots-item",
+                bulletActiveClass: "active__dots",
+                lockClass: "da131"
+            },
+            navigation: {
+                prevEl: ".steps-swiper__btn-prev",
+                nextEl: ".steps-swiper__btn-next"
+            },
+            on: {
+                stepActive() {
+                    let buttonNext = document.querySelector(".steps-swiper__btn-next");
+                    buttonNext.addEventListener("click", (function() {}));
+                },
+                slideChange() {}
+            }
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
@@ -3645,6 +3675,30 @@
             }));
         }
     }), 0);
+    let buttons = document.querySelectorAll(".quiz-step-button");
+    buttons.forEach((function(item) {
+        item.addEventListener("click", (function() {
+            let allSteps = document.querySelectorAll(".quiz-inner");
+            let currentStep = document.querySelector(".quiz-inner.active");
+            let currentStepNumber = Number(currentStep.getAttribute("data-step"));
+            if (item.classList.contains("quiz__next") && currentStepNumber + 1 < allSteps.length) {
+                let nextEl = allSteps[currentStepNumber + 1];
+                currentStep.classList.remove("active");
+                nextEl.classList.add("active");
+                if (currentStepNumber + 1 == allSteps.length - 1) {
+                    let consultationButton = document.querySelector(".quiz-action");
+                    consultationButton.classList.add("active");
+                }
+            } else if (item.classList.contains("quiz__prev") && currentStepNumber - 1 >= 0) {
+                let prevNum = currentStepNumber - 1;
+                let prevEl = allSteps[prevNum];
+                let consultationButton = document.querySelector(".quiz-action");
+                currentStep.classList.remove("active");
+                prevEl.classList.add("active");
+                if (consultationButton.classList.contains("active")) consultationButton.classList.remove("active");
+            }
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
     spollers();
