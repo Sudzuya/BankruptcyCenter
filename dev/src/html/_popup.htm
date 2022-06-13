@@ -1,10 +1,115 @@
-<!-- <div id="popup" aria-hidden="true" class="popup">
+<div id="application" aria-hidden="true" class="popup application">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__img">
+				<img src="@img/icon/complite-white.svg" alt="">
+			</div>
+			<div class="popup__title">
+				Ваша заявка принята!
+			</div>
 			<div class="popup__text">
-				Text
+				Скоро с вами свяжется наш менеджер и ответит на все интерисующие вас вопросы
+			</div>
+			<button data-close class="popup__btn">
+				Хорошо
+			</button>
+		</div>
+	</div>
+</div>
+
+<div id="policy" aria-hidden="true" class="popup policy">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<div class="popup__title">
+				Согласие на обработку персональных данных
+			</div>
+			<div class="popup__text">
+			<p>Настоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП ДМИТРИЙ КУЗНЕЦОВ (ОГРНИП 315632000003029, ИНН 632147294905), зарегистрированным в соответствии с законодательством РФ по адресу:
+				445026, Россия, Самарская, Тольятти, проспект Ленинский, д. 36, 311 (далее по тексту - Оператор).
+				<br>
+				Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой информации физическому лицу.
+				Настоящее Согласие выдано мною на обработку следующих персональных данных:
+				<br>
+				- Имя;
+				<br>
+				- Телефон;
+				<br>
+				Согласие дано Оператору для совершения следующих действий с моими персональными данными с использованием средств автоматизации и/или без использования таких средств: сбор, систематизация, накопление, хранение, уточнение (обновление, изменение), использование, обезличивание, а также осуществление любых иных действий, предусмотренных действующим законодательством РФ как неавтоматизированными, так и автоматизированными способами.
+				Данное согласие дается Оператору для обработки моих персональных данных в следующих целях:
+				<br>
+				- предоставление мне услуг/работ;
+				<br>
+				- направление в мой адрес уведомлений, касающихся предоставляемых услуг/работ;
+				<br>
+				- подготовка и направление ответов на мои запросы;
+				<br>
+				- направление в мой адрес информации, в том числе рекламной, о мероприятиях/товарах/услугах/работах Оператора.
+				<br>
+				<br>
+				Настоящее согласие действует до момента его отзыва путем направления соответствующего уведомления на электронный адрес info@банкротство-физлиц.рус. В случае отзыва мною согласия на обработку персональных данных Оператор вправе продолжить обработку персональных данных без моего согласия при наличии оснований, указанных в пунктах 2 – 11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона №152-ФЗ «О персональных данных» от 27.07.2006 г.
+			</p>	
 			</div>
 		</div>
 	</div>
-</div> -->
+</div>
+
+<div id="form" aria-hidden="true" class="popup form">
+	<div class="popup__wrapper">
+		<button data-close type="button" class="popup__close"></button>
+		<form class="first-block__form form">
+			<div class="form__title">Получите бесплатную консультацию</div>
+			<div class="form__input">
+				<label for="name">Имя</label>
+				<input id="name" type="text" required placeholder="Введите ваше имя">
+			</div>
+			<div class="form__input">
+				<label for="phone">Телефон</label>
+				<input id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
+			</div>
+			<div class="form__check">
+				<input id="chek" checked required type="checkbox">
+				<label for="chek">
+					<p>Отправляя форму, я соглашаюсь на <br><a href="#" data-popup="#policy">обработку персональных данных</a></p> 
+				</label>
+			</div>
+			<button data-popup="#application" type="submit" class="form__submit">Получить консультацию</button>
+			<div class="form__warning">
+				Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a> 
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="form-quiz" aria-hidden="true" class="popup form">
+	<div class="popup__wrapper">
+		<button data-close type="button" class="popup__close"></button>
+		<form class="first-block__form form">
+			<div class="form__title">Поздравляем!</div>
+			<div class="form__text">
+				Вы можете освободиться от долгов через процедуру банкротства физлица. Для этого Вам необходимо:
+			</div>
+			<div class="form__title">Оставьте свой номер телефона</div>
+			<div class="form__text">
+				<p>
+					и мы вам перезвоним с номера 8-800-333-89-13
+					<br>
+					Не пропустите наш звонок!
+				</p>
+			</div>
+			<div class="form__input">
+				<label for="name">Имя</label>
+				<input id="name" type="text" required placeholder="Введите ваше имя">
+			</div>
+			<div class="form__input">
+				<label for="phone">Телефон</label>
+				<input id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
+			</div>
+			<button data-popup="#application" type="submit" class="form__submit">Получить консультацию</button>
+			<div class="form__warning">
+				Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a> 
+			</div>
+		</form>
+	</div>
+</div>

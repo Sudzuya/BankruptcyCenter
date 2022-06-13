@@ -80,27 +80,14 @@ function initSliders() {
 			},
 
 			// Брейкпоинты
-			/*
+			
 			breakpoints: {
 				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
+					spaceBetween: 50,
 					autoHeight: true,
 				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
 			},
-			*/
+			
 			// События
 			on: {
 
@@ -225,7 +212,9 @@ function initSliders() {
 				bulletElement:'li',
 				bulletClass:'steps-swiper__dots-item',
 				bulletActiveClass:'active__dots',
-				lockClass:'da131'
+				renderBullet: function(index, className){
+						return `<li class="steps-swiper__dots-item"><div class="steps__line"></div></li>`;
+					}
 			},
 			
 
@@ -267,34 +256,26 @@ function initSliders() {
 			*/
 			// События
 			on: {
+				
+				slideChange(){
+					let step = document.querySelectorAll('.steps-swiper__dots');
+					let steps = document.querySelectorAll('.steps-swiper__dots-item');
+					let active = true;
 
-				stepActive(){
-					let buttonNext = document.querySelector('.steps-swiper__btn-next')
-					buttonNext.addEventListener('click', function(){
+					steps.forEach(function(e){
+						if (active) {
+							if (e.classList.contains('active__dots')) {
+								active = false
+							} else {
+								e.classList.add('active__dots')
+							}
+						} else {
+							if (!e.classList.contains('active__dots')) {
+								e.classList.remove('active__dots')
+							}
+						}
 					})
 				},
-
-				slideChange(){
-					// let step = document.querySelectorAll('.steps-swiper__dots');
-					// let steps = document.querySelectorAll('.steps-swiper__dots-item');
-
-					// let buttonNext = document.querySelector('.steps-swiper__btn-next')
-					
-					// let counter = this.activeIndex % steps.length
-
-					// if (this.activeIndex == Number(steps[0])){
-					// 	console.log('da');
-					// }
-					// console.log(steps[0]);
-
-				},
-				// activeIndexChange(index){
-				// 	let steps = document.querySelectorAll('.steps-swiper__dots-item')
-				// 	steps.forEach(function(e){
-				// 	})
-				// 	console.log(index.activeIndex);
-
-				// }
 			}
 		});
 	}

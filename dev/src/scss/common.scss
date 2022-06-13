@@ -15,8 +15,10 @@ button{
     padding: 15px 55px;
     background: #1565D8;
     color: #fff;
+    font-size: 18px;
     @media (max-width:576px) {
-        padding: 5px 55px;
+        padding: 12px;
+        width: 100%;
     }
 }
 .button-white{
@@ -69,9 +71,10 @@ button{
 .button-back{
     padding: 14px 24px 14px 50px;
     position: relative;
-    color: #1565D8;
+    color: #36B37E;
+    display: inline-block;
     @media (max-width:440px) {
-        padding: 10px 32px 10px 10px;
+        padding: 10px 10px 10px 32px;
     }
     &::before{
         content:"";
@@ -83,13 +86,35 @@ button{
         width: 12px;
         background-image: url('@img/icon/arrow-prev-green.svg');
         @media (max-width:440px) {
-            right: 14px;
+            left: 14px;
+        }
+    }
+}
+.button-back-white{
+    padding: 14px 24px 14px 50px;
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    @media (max-width:440px) {
+        padding: 10px 10px 10px 32px;
+    }
+    &::before{
+        content:"";
+        position: absolute;
+        top: 50%;
+        left: 28px;
+        transform: translateY(-50%) scale(-1, 1);
+        height: 12px;
+        width: 12px;
+        background-image: url('@img/icon/arrow-white.svg');
+        @media (max-width:440px) {
+            left: 14px;
         }
     }
 }
 .logo{
-    @include adaptiveValue("width",277 ,103, 992, 768, 1 );
-    @include adaptiveValue("height",54 ,20, 992, 768, 1 );
+    @include adaptiveValue("width",277 ,160, 992, 768, 1 );
+    @include adaptiveValue("height",54 ,30, 992, 768, 1 );
     img{
         height: 100%;
         width: 100%;
@@ -103,16 +128,23 @@ button{
     color: #fff;
     padding: 10px;
     font-weight: 600;
-    @include adaptiveValue("font-size", 36 , 32, 1200, 991, 1 );
-        @include adaptiveValue("font-size", 32 , 24, 991, 768, 1 );
-
 
 }
+
+.medium-title{
+    @include adaptiveValue("font-size", 36 , 32, 1200, 991, 1 );
+    @media (max-width:992px) {
+        @include adaptiveValue("font-size", 32 , 24, 991, 768, 1 );
+    }
+}
+
 .border-style-white{
     font-weight: 600;
     margin-bottom: 12px;
     @include adaptiveValue("font-size", 36 , 32, 1200, 991, 1 );
-
+    @media (max-width:992px) {
+        @include adaptiveValue("font-size", 32 , 24, 992, 320, 1 );
+    }
     h2{
         display: block;
         font-family: Manrope;
@@ -129,6 +161,7 @@ button{
     &__item{
         position: relative;
         padding-left: 40px;
+        @include adaptiveValue("padding-left",40 ,26, 768, 320, 1 );
         &:not(:last-child){
             margin-bottom: 16px;
         }
@@ -149,8 +182,8 @@ button{
     &__title {
         margin-bottom: 5px;
         font-weight: 600;
-
-        @include adaptiveValue("gap",22 ,20, 1200, 991, 1 );
+        font-size: 22px;
+        @include adaptiveValue("font-size",22 ,20, 1200, 991, 1 );
     }
 
 }
@@ -159,83 +192,69 @@ button{
     font-size: 48px;
     font-weight: 800;
     text-align: center;
+    max-width: 670px;
+    width: 100%;
+    margin: 0 auto;
     @include adaptiveValue("font-size", 48 , 32, 1200, 991, 1 );
     @include adaptiveValue("margin-bottom",64 ,15, 992, 768, 1 );
-
+    @media (max-width:992px) {
+        @include adaptiveValue("font-size", 32 , 24, 992, 320, 1 );
+    }
 }
-.form {
-    width: 360px;
-    flex: 0 0 auto;
-    padding: 30px 24px;
-    background: #FFFFFF;
-    box-shadow: 0px 15px 50px rgb(21 37 72 / 10%);
-    border-radius: 8px;
-    height: max-content;
-    @media (max-width:768px) {
-        padding: 24px 12px;
-        width: 100%;
+.link-hover{
+    position: relative;
+    padding-bottom: 3px;
+    transition: all .5s ease;
+    &::before{
+        content:'';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+        height: 1px;
+        background-color: #1565D8;
+        transition: all .5s ease;
     }
-    &__title {
-        @include adaptiveValue("font-size",24 ,20, 992, 768, 1 );
-        font-weight: 700;
-        margin-bottom: 8px;
-    }
-
-    &__text {
-        font-size: 14px;
-        font-weight: 600;
-        opacity: 0.6;
-        margin-bottom: 16px;
-    }
-
-    &__input {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 16px;
-        label{
-            font-family: 'Manrope';
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        input{
-            background: #FFFFFF;
-            border: 1px solid #C3CAD9;
-            border-radius: 4px;
-            padding: 13px 15px;
-            font-size: 16px;
-            &:focus{
-                outline: none;
-            }
-        }
-    }
-
-    &__check {
-        display: flex;
-        font-size: 14px;
-        margin-bottom: 16px;
-        input{
-            flex: 0 0 auto;
-            margin-right: 14px;
-            width: 18px;
-            height: 18px;
-        }
-        a{
-            text-decoration: underline;
-        }
-    }
-
-    &__submit {
-        padding: 16px 38px;
-        background: #1565D8;
-        border-radius: 8px;
-        color: #FFFFFF;
-        font-weight: 700;
-        @media (max-width:768px) {
+    &:hover{
+        color: #1565D8;
+        &::before{
             width: 100%;
         }
-        @media (max-width:576px) {
-            padding: 5px 38px;
+    }
+}
+
+.spollers{
+    &__title{
+        position: relative;
+        width: 100%;
+        text-align: start;
+        &._spoller-active{
+            &::before{
+                transform: translateY(-50%) scale(0);
+            }
         }
+
+        &::before,
+            &::after{
+                content:"";
+                position: absolute;
+                background: #1565D8;
+            }
+            &::before{
+                top: 50%;
+                right: 0;
+                height: 12px;
+                width: 3px;
+            transform: translateY(-50%) scale(1);
+
+                transition: all .5s ease;
+            }
+            &::after{
+                right: -4px;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 3px;
+                width: 12px;
+            }
     }
 }
