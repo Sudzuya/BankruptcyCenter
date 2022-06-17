@@ -500,7 +500,7 @@
             this._reopen = false;
             this._selectorOpen = false;
             this.lastFocusEl = false;
-            this._focusEl = [ "a[href]", 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', "button:not([disabled]):not([aria-hidden])", "select:not([disabled]):not([aria-hidden])", "textarea:not([disabled]):not([aria-hidden])", "area[href]", "iframe", "object", "embed", "[contenteditable]", '[tabindex]:not([tabindex^="-"])' ];
+            this._focusEl = [ "a[href]", 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', "button:not([disabled]):not([aria-hidden])", "select:not([disabled]):not([aria-hidden])", "textarea:not([disabled]):not([aria-hidden])", "area[href]", "iframe", "iframe", "object", "embed", "[contenteditable]", '[tabindex]:not([tabindex^="-"])' ];
             this.options = {
                 ...config,
                 ...options,
@@ -542,6 +542,7 @@
                 }
                 const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
                 if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+                    console.log(e);
                     e.preventDefault();
                     this.close();
                     return;
@@ -4397,7 +4398,7 @@
                 if (0 == e.target.value) e.target.value = "+7";
             }));
         }));
-        let article = document.querySelectorAll(".articles-bankruptcy.bankruptcy .article__item");
+        let article = document.querySelectorAll(".news .articles-bankruptcy .article__item");
         let showMoreBtn = document.querySelector(".articles-bankruptcy__show-more");
         let activeArticlesNumber = 0;
         if (window.innerWidth > 992) var articleNumber = 9; else if (window.innerWidth > 576) articleNumber = 4; else articleNumber = 3;
@@ -4463,10 +4464,6 @@
         }));
         return error;
     }
-    let page = document.querySelector(".page");
-    let script_location = window.location.pathname;
-    let locationClass = script_location.slice(1, -5);
-    page.classList.add(locationClass);
     window["FLS"] = true;
     isWebp();
     spollers();

@@ -76,6 +76,7 @@ class Popup {
 			'textarea:not([disabled]):not([aria-hidden])',
 			'area[href]',
 			'iframe',
+			'iframe',
 			'object',
 			'embed',
 			'[contenteditable]',
@@ -132,6 +133,7 @@ class Popup {
 			// Закрытие на пустом месте (popup__wrapper) и кнопки закрытия (popup__close) для закрытия
 			const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
 			if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+				console.log(e);
 				e.preventDefault();
 				this.close();
 				return;

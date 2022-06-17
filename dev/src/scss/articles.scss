@@ -88,6 +88,10 @@
         border-radius: 8px;
         display: inline-flex;
     }
+    &__button-wrapper{
+        display: flex;
+        justify-content: center;
+    }
 
 }
 .title {
@@ -99,6 +103,11 @@
     @include adaptiveValue("gap", 30 , 12, 1024, 992, 1 );
     @include adaptiveValue("margin-bottom", 32 , 12, 992, 768, 1 );
     &__item {
+        &-link {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1 1 100%;
+        }
         flex: 1 1 30%;
         background: #FFFFFF;
         box-shadow: 0px 2px 20px rgb(0 0 0 / 4%);
@@ -118,6 +127,7 @@
 
     &__info {
         flex: 1 1 30%;
+        padding-right: 5px;
     }
 
     &__title {

@@ -6,7 +6,7 @@
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
-			<main class="page">
+			<main class="page articles">
                 @@include('html/_breadcrumbs.html',{})
                 <div class="tabs-faq">
                     <div class="tabs-faq__container">
@@ -535,9 +535,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="articles-bankruptcy__show-all-article button-next-white">
-                                Показать все статьи
-                            </div>
+                            <a class="articles-bankruptcy__button-wrapper" href="#">
+                                <div class="articles-bankruptcy__show-all-article button-next-white">
+                                  Показать все статьи
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

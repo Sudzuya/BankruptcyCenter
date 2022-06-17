@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220617094911">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220617115259">
 	<link rel="shortcut icon" href="favicon.jpg">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,9 +139,9 @@
 						</ul>
 					</div>
 					<div class="header__middle">
-						<div class="header__logo logo">
+						<a href="index.html" class="header__logo logo">
 							<img src="img/logo.svg" alt="">
-						</div>
+						</a>
 						<div data-da=".header__mobile-body, 1024" class="header__watsapp social-info">
 							<div class="social-info__img">
 								<img src="img/icon/whatsapp.svg" alt="">
@@ -325,7 +325,7 @@
 				</div>
 			</div>
 		</header>
-		<main class="page">
+		<main class="page home">
 			<div class="first-block">
 				<div class="first-block__container">
 					<div class="first-block__body">
@@ -528,7 +528,7 @@
 								</li>
 							</ul>
 							<div class="three-block__action">
-								<button class="button-blue">Получить консультацию</button>
+								<button data-popup="#form" class="button-blue">Получить консультацию</button>
 								<button class="button-next">Подробнее</button>
 							</div>
 						</div>
@@ -1142,9 +1142,9 @@
 			<div class="footer__container">
 				<div class="footer__body">
 					<div class="footer__logo-block">
-						<div class="footer__logo logo">
+						<a href="index.html" class="footer__logo logo">
 							<img src="img/logo.svg" alt="">
-						</div>
+						</a>
 						<div class="footer__text">
 							г.Москва, Комсомольский проспект д. 16/2, с.3
 						</div>
@@ -1203,6 +1203,7 @@
 				<div class="popup__title">
 					Ваша заявка принята!
 				</div>
+				<label for="">31312</label>
 				<div class="popup__text">
 					Скоро с вами свяжется наш менеджер и ответит на все интерисующие вас вопросы
 				</div>
@@ -1212,6 +1213,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<div id="policy" aria-hidden="true" class="popup policy">
 		<div class="popup__wrapper">
@@ -1252,63 +1254,67 @@
 
 	<div id="form" aria-hidden="true" class="popup form">
 		<div class="popup__wrapper">
-			<button data-close type="button" class="popup__close"></button>
-			<form class="first-block__form form">
-				<div class="form__title">Получите бесплатную консультацию</div>
-				<div class="form__input field">
-					<label for="name">Имя</label>
-					<input class="_reg" id="name" type="text" required placeholder="Введите ваше имя">
-				</div>
-				<div class="form__input field">
-					<label for="phone">Телефон</label>
-					<input class="_reg tel" id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
-				</div>
-				<div class="form__check field">
-					<input class="_reg check" id="chek" checked required type="checkbox">
-					<label for="chek">
-						<p>Отправляя форму, я соглашаюсь на <br><a href="#" data-popup="#policy">обработку персональных данных</a></p>
-					</label>
-				</div>
-				<button type="submit" class="form__submit">Получить консультацию</button>
-				<div class="form__warning">
-					Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a>
-				</div>
-			</form>
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<form class="first-block__form form">
+					<div class="form__title">Получите бесплатную консультацию</div>
+					<div class="form__input field">
+						<div for="name">Имя</div>
+						<input class="_reg" id="name" type="text" required placeholder="Введите ваше имя">
+					</div>
+					<div class="form__input field">
+						<div for="phone">Телефон</div>
+						<input class="_reg tel" id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
+					</div>
+					<div class="form__check field">
+						<input class="_reg check" id="chek1" checked required type="checkbox">
+						<label for="chek1">
+							<p>Отправляя форму, я соглашаюсь на <br><a href="#" data-popup="#policy">обработку персональных данных</a></p>
+						</label>
+					</div>
+					<button type="submit" class="form__submit">Получить консультацию</button>
+					<div class="form__warning">
+						Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 
 	<div id="form-quiz" aria-hidden="true" class="popup form">
 		<div class="popup__wrapper">
-			<button data-close type="button" class="popup__close"></button>
-			<form class="first-block__form form">
-				<div class="form__title">Поздравляем!</div>
-				<div class="form__text">
-					Вы можете освободиться от долгов через процедуру банкротства физлица. Для этого Вам необходимо:
-				</div>
-				<div class="form__title">Оставьте свой номер телефона</div>
-				<div class="form__text">
-					<p>
-						и мы вам перезвоним с номера 8-800-333-89-13
-						<br>
-						Не пропустите наш звонок!
-					</p>
-				</div>
-				<div class="form__input">
-					<label for="name">Имя</label>
-					<input id="name" type="text" required placeholder="Введите ваше имя">
-				</div>
-				<div class="form__input">
-					<label for="phone">Телефон</label>
-					<input id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
-				</div>
-				<button data-popup="#application" type="submit" class="form__submit">Получить консультацию</button>
-				<div class="form__warning">
-					Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a>
-				</div>
-			</form>
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<form class="first-block__form form">
+					<div class="form__title">Поздравляем!</div>
+					<div class="form__text">
+						Вы можете освободиться от долгов через процедуру банкротства физлица. Для этого Вам необходимо:
+					</div>
+					<div class="form__title">Оставьте свой номер телефона</div>
+					<div class="form__text">
+						<p>
+							и мы вам перезвоним с номера 8-800-333-89-13
+							<br>
+							Не пропустите наш звонок!
+						</p>
+					</div>
+					<div class="form__input">
+						<div for="name">Имя</div>
+						<input id="name" type="text" required placeholder="Введите ваше имя">
+					</div>
+					<div class="form__input">
+						<div for="phone">Телефон</div>
+						<input id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
+					</div>
+					<button data-popup="#application" type="submit" class="form__submit">Получить консультацию</button>
+					<div class="form__warning">
+						Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220617094911"></script>
+	<script src="js/app.min.js?_v=20220617115259"></script>
 </body>
 
 </html>

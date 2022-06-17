@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', function() {
       })
     });
 
-    let article = document.querySelectorAll('.articles-bankruptcy.bankruptcy .article__item');
+    let article = document.querySelectorAll('.news .articles-bankruptcy .article__item');
     let showMoreBtn = document.querySelector('.articles-bankruptcy__show-more');
     let activeArticlesNumber = 0;
 

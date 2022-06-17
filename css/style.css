@@ -553,6 +553,7 @@ button {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  text-align: start;
 }
 
 .form__title {
@@ -590,7 +591,7 @@ button {
   margin-bottom: 16px;
 }
 
-.form__input label {
+.form__input div {
   font-family: "Manrope";
   font-size: 14px;
   font-weight: 600;
@@ -1249,7 +1250,7 @@ button {
   left: 0;
   width: 300px;
   opacity: 0;
-  z-index: 5;
+  z-index: 10;
   pointer-events: none;
 }
 
@@ -3946,6 +3947,15 @@ button {
   display: inline-flex;
 }
 
+.articles-bankruptcy__button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .title {
   max-width: 960px;
 }
@@ -4001,6 +4011,17 @@ button {
       flex-wrap: wrap;
 }
 
+.article__item-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
 @supports ((-moz-column-gap: clamp( 0.625rem , -30.375rem  +  50vw , 1.625rem )) or (column-gap: clamp( 0.625rem , -30.375rem  +  50vw , 1.625rem ))) {
   .article__item {
     -webkit-column-gap: clamp( 0.625rem , -30.375rem  +  50vw , 1.625rem );
@@ -4021,6 +4042,7 @@ button {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 30%;
           flex: 1 1 30%;
+  padding-right: 5px;
 }
 
 .article__title {
