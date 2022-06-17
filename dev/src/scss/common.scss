@@ -1,4 +1,10 @@
 // Заголовки, общие БЄМ блоки и проче...
+.page {
+    @media (max-width:1024px) {
+        padding-top: 80px;
+    }
+}
+
 a{
     font-family: 'Manrope';
     font-weight: 500;
@@ -91,7 +97,7 @@ button{
     }
 }
 .button-back-white{
-    padding: 14px 24px 14px 50px;
+    padding: 12px 24px 12px 50px;
     position: relative;
     color: #fff;
     display: inline-block;
@@ -113,8 +119,10 @@ button{
     }
 }
 .logo{
-    @include adaptiveValue("width",277 ,160, 992, 768, 1 );
-    @include adaptiveValue("height",54 ,30, 992, 768, 1 );
+    position: relative;
+    z-index: 50;
+    @include adaptiveValue("width",277 ,160, 1024, 768, 1 );
+    @include adaptiveValue("height",54 ,30, 1024, 768, 1 );
     img{
         height: 100%;
         width: 100%;

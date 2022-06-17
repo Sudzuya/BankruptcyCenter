@@ -43,7 +43,29 @@
 									</li>
 								</ul>
 							</div>
-							@@include('html/_form.html',{}) 
+							<form class="first-block__form form" action="#" method="POST">
+								<div class="form__title">Получите бесплатную консультацию адвоката по вашей ситуации</div>
+								<div class="form__text">Адвокат перезвонит и задаст уточняющие вопросы. За 5 минут вы узнаете, подходит вам банкротство и сколько это стоит</div>
+								<div class="form__input field">
+									<label for="name">Имя</label>
+									<input class="_reg" id="name" type="text" required placeholder="Введите ваше имя">
+								</div>
+								<div class="form__input field">
+									<label for="phone">Телефон</label>
+									<input class="_reg tel" id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
+								</div>
+								<div class="form__check field">
+									<input class="_reg check" id="chek" checked required type="checkbox">
+									<label for="chek">
+										<p>Отправляя форму, я соглашаюсь на <br><a href="#" data-popup="#policy">обработку персональных данных</a></p> 
+									</label>
+								</div>
+								<button type="submit" class="form__submit">Получить консультацию</button>
+								<div class="form__warning">
+									Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a> 
+								</div>
+							</form>
+							
 						</div>
 					</div>
 				</div>
@@ -187,7 +209,7 @@
 									</li>
 								</ul>
 								<div class="three-block__action">
-									<button data-popup="#form" class="button-blue">Получить консультацию</button>
+									<button class="button-blue">Получить консультацию</button>
 									<button class="button-next">Подробнее</button>
 								</div>
 							</div>
@@ -252,128 +274,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="five-block">
-					<div class="five-block__container">
-						<div class="five-block__body">
-							<div class="five-block__title title">
-								Наша команда юристов
-							</div>
-							<div class="five-block__swiper swiper-team">
-								<div class="swiper-team__wrapper">
-									<div class="swiper-team__slide">
-										<div class="swiper-team__slide-info">
-											<div class="swiper-team__title medium-title border-style">
-												Ольга Врублевская
-											</div>
-											<div class="swiper-team__text">
-												Юрист с 10 летним стажем Завершено 210 дел по банкротству
-											</div>
-											<ul class="swiper-team__list advantages-list">
-												<div class="advantages-list__item">
-													<div class="advantages-list__title">
-														В 2009 году 
-													</div>
-													<div class="advantages-list__text">
-														окончил ВТУ при ФАСС в г. Москве
-													</div>
-												</div>
-												<div class="advantages-list__item">
-													<div class="advantages-list__title">
-														В 2010 году
-													</div>
-													<div class="advantages-list__text">
-														начал юридическую практику
-													</div>
-												</div>
-												<div class="advantages-list__item">
-													<div class="advantages-list__title">
-														В 2013 году
-													</div>
-													<div class="advantages-list__text">
-														начал работать по направлению банкротство
-													</div>
-												</div>
-											</ul>
-											<a href="#" class="swiper-team__link-full button-next">
-												Подробнее
-											</a>
-										</div>
-										<div class="swiper-team__slide-img">
-											<div class="swiper-team__slide-img-body">
-												<img src="@img/03.jpg" alt="">
-											</div>
-											<div class="swiper-team__slide-img-text">
-												<p>“Успешно завершено более 100 дел по банкротству физических лиц со 100% списанием долга. Являюсь членом Всероссийской Ассоциации юристов. Все интересующие Вас вопросы Вы можете задать мне через форму обратной связи”</p>
-											</div>
-										</div>
-										<a href="#" class="swiper-team__link-full mobile button-next">
-											Подробнее
-										</a>
-									</div>
-									<div class="swiper-team__slide">
-										<div class="swiper-team__slide-info">
-											<div class="swiper-team__title border-style">
-												Ольга Врублевская
-											</div>
-											<div class="swiper-team__text">
-												Юрист с 10 летним стажем Завершено 210 дел по банкротству
-											</div>
-											<ul class="swiper-team__list advantages-list">
-												<div class="advantages-list__item">
-													<div class="advantages-list__title">
-														В 2009 году 
-													</div>
-													<div class="advantages-list__text">
-														окончил ВТУ при ФАСС в г. Москве
-													</div>
-												</div>
-												<div class="advantages-list__item">
-													<div class="advantages-list__title">
-														В 2010 году
-													</div>
-													<div class="advantages-list__text">
-														начал юридическую практику
-													</div>
-												</div>
-												<div class="advantages-list__item">
-													<div class="advantages-list__title">
-														В 2013 году
-													</div>
-													<div class="advantages-list__text">
-														начал работать по направлению банкротство
-													</div>
-												</div>
-											</ul>
-											<a href="#" class="swiper-team__link-full button-next">
-												Подробнее
-											</a>
-										</div>
-										<div class="swiper-team__slide-img">
-											<div class="swiper-team__slide-img-body">
-												<img src="@img/03.jpg" alt="">
-											</div>
-											<div class="swiper-team__slide-img-text">
-												<p>“Успешно завершено более 100 дел по банкротству физических лиц со 100% списанием долга. Являюсь членом Всероссийской Ассоциации юристов. Все интересующие Вас вопросы Вы можете задать мне через форму обратной связи”</p>
-											</div>
-										</div>
-										<a href="#" class="swiper-team__link-full mobile button-next">
-											Подробнее
-										</a>
-									</div>
-								</div>
-								<div class="swiper-team-pagination"></div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-team-navigation">
-						<button class="swipe-prev">
-							<img src="@img/icon/arrowright.svg" alt="">
-						</button>
-						<button class="swipe-next">
-							<img src="@img/icon/arrowright.svg" alt="">
-						</button>
-					</div>
-				</div>
+				@@include('html/_ourTeam.html',{}) 
 				<div class="six-block">
 					<div class="six-block__container">
 						<div class="six-block__body">
@@ -569,81 +470,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="seven-block">
-					<div class="seven-block__container">
-						<div class="seven-block__body">
-							<div class="seven-block__title title">
-								Отзывы прошедших процедуру банкротства
-							</div>
-							<div class="seven-block__content">
-								<div class="seven-block__swiper swiper-reviews">
-									<div class="swiper-reviews__wrapper">
-										<div class="swiper-reviews__slide">
-											<div class="swiper-reviews__slide-item">
-												<div class="swiper-reviews__img">
-													<picture>
-														<source media="(max-width:767px)" srcset="@img/04-1.svg">
-														<img src="@img/04.jpg" alt="">
-													</picture>
-												</div>
-												<div class="swiper-reviews__info">
-													<div class="swiper-reviews__title-city">
-														Ангелина, Москва
-													</div>
-													<div class="swiper-reviews__number">
-														— Дело№ А53-5425/2019
-													</div>
-													<div class="swiper-reviews__title">
-														Списано 2 500 000 руб. за 12 месяцев
-													</div>
-													<div class="swiper-reviews__text">
-														Обратилась к юристу по совету друзей. Были задолженности в 17 микрофинансовых организациях и 3-х банках. Общая сумма задолженности составляла 1 567 000 руб. Шли постоянные угрозы от коллекторов, жизнь превратилась в ад. Были, конечно, сомнения, но после первой консультации появилась уверенность в Обратилась к юристу по совету друзей. Были задолженности в 17 микрофинансовых организациях и 3-х банках. Общая сумма задолженности составляла 1 567 000 руб. Шли постоянные угрозы от коллекторов, жизнь превратилась в ад. 
-													</div>
-													<div class="swiper-reviews__full">
-														Развернуть
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-reviews__slide">
-											<div class="swiper-reviews__slide-item">
-												<picture>
-													<source media="(max-width:767px)" srcset="@img/04-1.svg">
-													<img src="@img/04.jpg" alt="">
-												</picture>
-												<div class="swiper-reviews__info">
-													<div class="swiper-reviews__title-city">
-														Ангелина, Москва
-													</div>
-													<div class="swiper-reviews__number">
-														— Дело№ А53-5425/2019
-													</div>
-													<div class="swiper-reviews__title">
-														Списано 2 500 000 руб. за 12 месяцев
-													</div>
-													<div class="swiper-reviews__text">
-														Обратилась к юристу по совету друзей. Были задолженности в 17 микрофинансовых организациях и 3-х банках. Общая сумма задолженности составляла 1 567 000 руб. Шли постоянные угрозы от коллекторов, жизнь превратилась в ад. Были, конечно, сомнения, но после первой консультации появилась уверенность в Обратилась к юристу по совету друзей. Были задолженности в 17 микрофинансовых организациях и 3-х банках. Общая сумма задолженности составляла 1 567 000 руб. Шли постоянные угрозы от коллекторов, жизнь превратилась в ад. 
-													</div>
-													<div class="swiper-reviews__full">
-														Развернуть
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="seven-block-navigation">
-										<button class="swipe-prev">
-											<img src="@img/icon/arrow.svg" alt="">
-										</button>
-										<button class="swipe-next">
-											<img src="@img/icon/arrow.svg" alt="">
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				@@include('html/_reviews.html',{}) 
 				<div class="eight">
 					<div class="eight__container">
 						<div class="eight__body">
@@ -736,37 +563,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="ten-block">
-					<div class="ten-block__container">
-						<div class="ten-block__body">
-							<div class="ten-block__content">
-								<div class="ten-block__info">
-									<div class="ten-block__title border-style-white">
-										<h2>
-											<span>Сделаем  все за вас!</span>
-										</h2>
-									</div>
-									<div class="ten-block__sub-title">
-										Проведем процедуру банкротства, соберем документы, подадим заявления в арбитражный суд, признаем банкротом, спишем долги или вернем деньги!
-									</div>
-									<div class="ten-block__contact contact">
-										<div class="contact__title">
-											Оставьте заявку или позвоните по номеру, наш юрист проконсультирует вас!
-										</div>
-										<a tel="+79291127888" class="contact__tell">+7 929 112-78-88</a>
-										<div class="contact__info">
-											<div class="contact__adress">
-												Адрес: г. Санкт-Петербург, переулок У. Громовой, д. 4
-											</div>
-											<a href="mailto:spb@банкротство-физлиц.рус" class="contact__mail">
-												E-mail: spb@банкротство-физлиц.рус
-											</a>
-											<div class="contact__time">
-												Режим работы: пн-пт 9:00 - 18:00; сб, вс - выходной
-											</div>
-										</div>
-									</div>
-								</div>
+				<div class="footer-form">
+					<div class="footer-form__container">
+						<div class="footer-form__body">
+							<div class="footer-form__content">
+								@@include('html/_footerInfo.html',{}) 
 								@@include('html/_form.html',{}) 
 							</div>
 						</div>

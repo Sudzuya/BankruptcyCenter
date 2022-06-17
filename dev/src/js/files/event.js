@@ -1,7 +1,7 @@
 let buttons = document.querySelectorAll('.quiz-step-button')
 
 buttons.forEach(function(item) {
-    item.addEventListener('click', function(){
+    item.addEventListener('click', function() {
         let allSteps = document.querySelectorAll('.quiz__inner');
         // let allStepsNumber = document.querySelectorAll('.steps__item');
         let currentStep = document.querySelector('.quiz__inner.active');
@@ -25,8 +25,6 @@ buttons.forEach(function(item) {
             } else if (nextEl.getAttribute('data-step') == allSteps.length - 1){
                 consultationButton.classList.remove('proggress');
             }
-
-            console.log(nextEl.getAttribute('data-step'), allSteps.length - 1);
 
         } else if (item.classList.contains('quiz__prev') && currentStepNumber - 1 >= 0) {
             let prevNum = currentStepNumber - 1;
@@ -53,10 +51,12 @@ let selectCity = document.querySelector('.location__select-city span')
 let headerMobile = document.querySelector('.header__mobile');
 let city = document.querySelector('.form-city')
 
+
 selectCity.addEventListener('click', function(){
     document.querySelector('.form-city').classList.toggle('active');
     document.querySelector('.location__select-city').classList.toggle('active');
         if (headerMobile.classList.contains('active')){
+            document.querySelector('html').classList.add('lock')
             city.classList.toggle('full')
             document.querySelector('.form-city__close-search').addEventListener('click', function(){
                 city.classList.remove('full')
@@ -73,6 +73,7 @@ let burgerBtn = document.querySelector('.header__burger')
 
 burgerBtn.addEventListener('click', function(){
     document.querySelector('.header__mobile').classList.toggle('active');
+    document.querySelector('html').classList.toggle('lock')
 })
 
 let forms = document.querySelectorAll('form')
@@ -103,12 +104,10 @@ forms.forEach(function(form){
                         warningMassage.classList.add('valid')
                     }
                 }
-
-                
+             
             })
             submitBtn.addEventListener('click', function(){
                 if (field.value.length === 0 ){
-                    console.log(field.value.length);
                     field.classList.add('invalid')
                     warningMassage.classList.add('invalid')
                 }
@@ -126,11 +125,9 @@ forms.forEach(function(form){
                         warningMassage.classList.add('valid')
                     }
                 }
-
             })
         })
 })
-
 
 
 
@@ -169,4 +166,51 @@ window.addEventListener('DOMContentLoaded', function() {
         }
       })
     });
-  })
+
+    let article = document.querySelectorAll('.articles-bankruptcy.bankruptcy .article__item');
+    let showMoreBtn = document.querySelector('.articles-bankruptcy__show-more');
+    let activeArticlesNumber = 0;
+
+    if (window.innerWidth > 992) {
+        var articleNumber = 9;
+    } else if (window.innerWidth > 576) {
+        var articleNumber = 4;
+    } else {
+        var articleNumber = 3;
+    }
+
+    activeArticlesNumber = activeArticlesNumber + articleNumber;
+    
+    article.forEach(function(item, i) {
+        if (i < activeArticlesNumber) {
+            item.classList.add('active');
+        }
+    })
+
+
+    if (showMoreBtn){
+        showMoreBtn.addEventListener('click', function() {
+            activeArticlesNumber = activeArticlesNumber + articleNumber;
+            if (article.length >= activeArticlesNumber) {
+                article.forEach(function(item, i) {
+                    if (i < activeArticlesNumber) {
+                        item.classList.add('active');
+                    }
+                })
+                if (article.length == activeArticlesNumber) {
+                    showMoreBtn.style.display = 'none'
+                }
+            }
+        })
+    }
+}) 
+
+let popupThanks = document.querySelector('.popup__thanks');
+
+popupThanks.addEventListener('click', function(e) {
+    let target = e.target;
+    
+    if (target.classList.contains('popup__close') || target.classList.contains('popup__btn'))  {
+        popupThanks.classList.remove('popup_show')
+    }
+})

@@ -46,14 +46,14 @@ flsFunctions.spollers();
 Документация: https://template.fls.guru/template-docs/modul-taby.html
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
 Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Попапы

@@ -33,6 +33,11 @@
         font-size: 16px;
         margin-right: 56px;
         @include adaptiveValue("margin-right", 56 , 20, 1200, 991, 1 );
+        @media (max-width:1024px) {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+        }
     }
 
     &__list-item {

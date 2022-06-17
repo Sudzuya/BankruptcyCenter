@@ -75,8 +75,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swipe-prev',
-				nextEl: '.swipe-next',
+				prevEl: '.our-team .swipe-prev',
+				nextEl: '.our-team .swipe-next',
 			},
 
 			// Брейкпоинты
@@ -142,8 +142,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.seven-block-navigation .swipe-prev',
-				nextEl: '.seven-block-navigation .swipe-next',
+				prevEl: '.reviews-navigation .swipe-prev',
+				nextEl: '.reviews-navigation .swipe-next',
 			},
 
 			// Брейкпоинты

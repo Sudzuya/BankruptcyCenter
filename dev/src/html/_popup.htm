@@ -1,4 +1,4 @@
-<div id="application" aria-hidden="true" class="popup application">
+<div id="application" aria-hidden="true" class="popup popup__thanks application">
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close"></button>
@@ -60,21 +60,21 @@
 		<button data-close type="button" class="popup__close"></button>
 		<form class="first-block__form form">
 			<div class="form__title">Получите бесплатную консультацию</div>
-			<div class="form__input">
+			<div class="form__input field">
 				<label for="name">Имя</label>
-				<input id="name" type="text" required placeholder="Введите ваше имя">
+				<input class="_reg"  id="name" type="text" required placeholder="Введите ваше имя">
 			</div>
-			<div class="form__input">
+			<div class="form__input field">
 				<label for="phone">Телефон</label>
-				<input id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
+				<input class="_reg tel" id="phone" type="tel" required placeholder="+7 (000) 000 00 00 ">
 			</div>
-			<div class="form__check">
-				<input id="chek" checked required type="checkbox">
+			<div class="form__check field">
+				<input class="_reg check"  id="chek" checked required type="checkbox">
 				<label for="chek">
 					<p>Отправляя форму, я соглашаюсь на <br><a href="#" data-popup="#policy">обработку персональных данных</a></p> 
 				</label>
 			</div>
-			<button data-popup="#application" type="submit" class="form__submit">Получить консультацию</button>
+			<button type="submit" class="form__submit">Получить консультацию</button>
 			<div class="form__warning">
 				Пожалуйста корректно заполните поля, <a href="#" data-popup="#policy">согласитесь на обработку данных</a> 
 			</div>
