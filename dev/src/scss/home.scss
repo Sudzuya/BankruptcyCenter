@@ -78,6 +78,32 @@
 .two-block {
     background: #1565D8;
     color: #fff;
+    position: relative;
+    overflow: hidden;
+    &::before,
+    &::after{
+        content:"";
+        position: absolute;
+        width: 1185px;
+        height: 1190px;
+        background-image: url('@img/decor/03.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        @media (max-width:1024px) {
+            display: none;
+        }
+    }
+    &::before{
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    &::after{
+        right: 0;
+        bottom: 0;
+        transform: translate(50%, 50%) rotate(180deg);
+    }
     @media (max-width:767px) {
         border-radius: 16px;
     }
@@ -295,9 +321,27 @@
 // ТРЕТИЙ ЭКРАН
 .three-block {
     padding: 100px 0;
+    position: relative;
+    overflow: hidden;
     @include adaptiveValue("padding-top",100 , 32, 1200, 768, 1 );
     @include adaptiveValue("padding-bottom",100 , 32, 1200, 768, 1 );
-
+    &::before{
+        content:"";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1185px;
+        height: 1190px;
+        background-image: url('@img/decor/04.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: translate(30%, 65%);
+        z-index: -1;
+        @media (max-width:1024px) {
+            display: none;
+        }
+    }
     &__body {
         display: flex;
         @include adaptiveValue("gap",100 , 50, 1200, 991, 1 );
@@ -382,11 +426,10 @@
 // ЧЕТВЕРТЫЙ ЭКРАН
 .four-block {
     padding: 140px 0;
-    margin-bottom: 140px;
     background: #F4F9FF;
+
     @include adaptiveValue("padding-top",140 , 32, 1200, 768, 1 );
     @include adaptiveValue("padding-bottom",140 , 32, 1200, 768, 1 );
-    @include adaptiveValue("margin-bottom",140 , 32, 1200, 768, 1 );
     &__container {
     }
 
@@ -486,7 +529,26 @@
 // ПЯТЫЙ ЭКРАН
 .our-team {
     position: relative;
-    @include adaptiveValue("margin-bottom",140 ,30, 992, 768, 1 );
+    overflow: hidden;
+    @include adaptiveValue("padding-top",140 , 30, 1200, 768, 1 );
+    @include adaptiveValue("padding-bottom",140 ,30, 992, 768, 1 );
+    &::before{
+        content:"";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1185px;
+        height: 1190px;
+        background-image: url('@img/decor/04.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: translate(40%, 5%);
+        z-index: -5;
+        @media (max-width:1024px) {
+            display: none;
+        }
+    }
     &__swiper {
         
     }
@@ -958,7 +1020,7 @@
     
         &__slide-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 171px;
             @include adaptiveValue("gap",171 ,16, 992, 768, 1 );
             @media (max-width:767px) {
@@ -981,8 +1043,6 @@
             }
         }
     
-        &__info {
-        }
     
         &__title-city {
             font-size: 24px;
@@ -1003,9 +1063,17 @@
             margin-bottom: 8px;
         }
     
+        &__text-body{
+            height: 180px;
+            margin-bottom: 21px;
+            overflow: hidden;
+            &.full-content {
+              height: 100%;
+            }
+        }
+
         &__text {
             font-size: 16px;
-            margin-bottom: 21px;
             line-height: 20px;
             @media (max-width:576px) {
                 font-size: 14px;
@@ -1018,6 +1086,7 @@
             border-bottom: 1px dotted #1565D8;
             display: inline-block;
             width: max-content;
+            cursor: pointer;
             @media (max-width:767px) {
                 margin: 16px 0;
             }
@@ -1054,8 +1123,25 @@
 
 // ВОСЬМОЙ ЭКРАН
 .eight {
-    margin-bottom: 120px;
     @include adaptiveValue("margin-bottom",120 ,30, 992, 768, 1 );
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        right: -20%;
+        top: 50%;
+        width: 1185px;
+        height: 1190px;
+        background-image: url(../img/decor/04.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        // transform: translate(-40%, 30%);
+        z-index: -1;
+        @media (max-width:1024px) {
+            display: none;
+        }
+    }
     &__container {
     }
 
@@ -1164,9 +1250,26 @@
 // ДЕВЯТЫЙ ЭКРАН
 .nine {
     background: #F4F9FF;
-    &__container {
+    position: relative;
+    overflow: hidden;
+    @include adaptiveValue("margin-bottom",120 ,30, 992, 768, 1 );
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1185px;
+        height: 1190px;
+        background-image: url(../img/decor/02.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: translate(-40%, 30%);
+        z-index: 0;
+        @media (max-width:1024px) {
+            display: none;
+        }
     }
-
     &__body {
         @include adaptiveValue("padding-top",80 ,15, 992, 768, 1 );
         @include adaptiveValue("padding-bottom",80 ,15, 992, 768, 1 );
@@ -1174,6 +1277,8 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        position: relative;
+        z-index: 5;
         a{
             width: max-content;
         }
@@ -1190,6 +1295,9 @@
 
     &__link-full {
         border-radius: 8px; 
+        &.hidden {
+            display: none;
+        }
     }
 
     .spollers {
@@ -1203,6 +1311,9 @@
                 .spollers__title{
                     border-top: 1px solid #E5EAF4;
                 }
+            }
+            &._spoiler-hidden {
+                display: none;
             }
         }
     
@@ -1227,9 +1338,24 @@
 // ДЕСЯТЫЙ БЛОК
 .footer-form {
     @include adaptiveValue("margin-bottom",120 ,50, 992, 768, 1 );
-    &__container {
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        left: -20%;
+        top: 35%;
+        width: 1185px;
+        height: 1190px;
+        background-image: url(../img/decor/04.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        // transform: translate(-40%, 30%);
+        z-index: -1;
+        @media (max-width:1024px) {
+            display: none;
+        }
     }
-
     &__body {
     }
 

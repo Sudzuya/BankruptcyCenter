@@ -4,7 +4,10 @@
         padding-top: 80px;
     }
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 a{
     font-family: 'Manrope';
     font-weight: 500;
@@ -32,6 +35,7 @@ button{
     background: #FFFFFF;
     font-weight: 700;
 }
+
 .button-next{
     padding: 14px 50px 14px 24px;
     position: relative;
@@ -53,6 +57,7 @@ button{
         }
     }
 }
+
 .button-next-white{
     padding: 14px 50px 14px 24px;
     position: relative;
@@ -74,6 +79,7 @@ button{
         }
     }
 }
+
 .button-back{
     padding: 14px 24px 14px 50px;
     position: relative;
@@ -96,6 +102,7 @@ button{
         }
     }
 }
+
 .button-back-white{
     padding: 12px 24px 12px 50px;
     position: relative;
@@ -118,6 +125,7 @@ button{
         }
     }
 }
+
 .logo{
     position: relative;
     z-index: 50;
@@ -129,6 +137,7 @@ button{
         object-fit: contain;
     }
 }
+
 .border-style{
     display: block;
     background: #36B37E;
@@ -165,6 +174,7 @@ button{
         }
     }
 }
+
 .advantages-list{
     &__item{
         position: relative;
@@ -195,6 +205,7 @@ button{
     }
 
 }
+
 .title{
     font-family: 'Manrope';
     font-size: 48px;
@@ -209,6 +220,7 @@ button{
         @include adaptiveValue("font-size", 32 , 24, 992, 320, 1 );
     }
 }
+
 .link-hover{
     position: relative;
     padding-bottom: 3px;
@@ -265,4 +277,8 @@ button{
                 width: 12px;
             }
     }
+}
+
+.hidden{
+    display: none !important;
 }
