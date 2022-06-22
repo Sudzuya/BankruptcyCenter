@@ -404,7 +404,7 @@
     }
     function functions_FLS(message) {
         setTimeout((() => {
-            if (window.FLS) console.log(message);
+            if (window.FLS) ;
         }), 0);
     }
     function uniqArray(array) {
@@ -4123,8 +4123,9 @@
             observeParents: true,
             slidesPerView: 1,
             spaceBetween: 0,
-            autoHeight: true,
             speed: 800,
+<<<<<<< HEAD
+=======
             navigation: {
                 prevEl: ".reviews-navigation .swipe-prev",
                 nextEl: ".reviews-navigation .swipe-next"
@@ -4135,36 +4136,125 @@
             wrapperClass: "steps-swiper__wrapper",
             slideClass: "steps-swiper__slide",
             modules: [ Navigation, Pagination ],
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
             observer: true,
             observeParents: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            autoHeight: true,
-            speed: 800,
-            pagination: {
-                el: ".steps-swiper__dots",
-                clickable: true,
-                bulletElement: "li",
-                bulletClass: "steps-swiper__dots-item",
-                bulletActiveClass: "active__dots",
-                renderBullet: function(index, className) {
-                    return `<li class="steps-swiper__dots-item"><div class="steps__line"></div></li>`;
-                }
-            },
             navigation: {
-                prevEl: ".steps-swiper__btn-prev",
-                nextEl: ".steps-swiper__btn-next"
+                prevEl: ".reviews-navigation .swipe-prev",
+                nextEl: ".reviews-navigation .swipe-next"
             },
             on: {
-                slideChange() {
-                    document.querySelectorAll(".steps-swiper__dots");
-                    let steps = document.querySelectorAll(".steps-swiper__dots-item");
-                    let active = true;
-                    steps.forEach((function(e) {
-                        if (active) if (e.classList.contains("active__dots")) active = false; else e.classList.add("active__dots"); else if (!e.classList.contains("active__dots")) e.classList.remove("active__dots");
+                unlock: function() {
+                    console.log();
+                    let reviewsInner = document.querySelectorAll(".swiper-reviews__info");
+                    reviewsInner.forEach((item => {
+                        let reviesContent = item.querySelector(".swiper-reviews__text");
+                        let reviesBody = item.querySelector(".swiper-reviews__text-body");
+                        let reviesButtonFull = item.querySelector(".swiper-reviews__full");
+                        let heightBody = reviesBody.clientHeight;
+                        let heightContent = reviesContent.scrollHeight - 2;
+                        if (heightContent >= heightBody) reviesButtonFull.addEventListener("click", (() => {
+                            if (reviesBody.classList.contains("full-content")) {
+                                reviesBody.classList.remove("full-content");
+                                reviesButtonFull.textContent = "Развернуть";
+                            } else {
+                                reviesBody.classList.add("full-content");
+                                reviesButtonFull.textContent = "Свернуть";
+                            }
+                        })); else reviesButtonFull.classList.add("hidden");
                     }));
                 }
             }
+        });
+        if (document.querySelector(".steps-swiper")) {
+            let stepsSlider = new core(".steps-swiper", {
+                wrapperClass: "steps-swiper__wrapper",
+                slideClass: "steps-swiper__slide",
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                autoHeight: true,
+                speed: 800,
+                pagination: {
+                    el: ".steps-swiper__dots",
+                    clickable: true,
+                    bulletElement: "li",
+                    bulletClass: "steps-swiper__dots-item",
+                    bulletActiveClass: "active__dots",
+                    renderBullet: function(index, className) {
+                        return `<li class="steps-swiper__dots-item"><div class="steps__line"></div></li>`;
+                    }
+                },
+                navigation: {
+                    prevEl: ".steps-swiper__btn-prev",
+                    nextEl: ".steps-swiper__btn-next"
+                },
+                on: {
+                    slideChange() {
+                        document.querySelectorAll(".steps-swiper__dots");
+                        let steps = document.querySelectorAll(".steps-swiper__dots-item");
+                        let active = true;
+                        steps.forEach((function(e, i) {
+                            if (active) if (e.classList.contains("active__dots")) active = false; else e.classList.add("active__dots"); else if (!e.classList.contains("active__dots")) e.classList.remove("active__dots");
+                            if (i == steps.length) {
+                                let buttonNext = document.querySelector(".steps-swiper__btn-next");
+                                console.log();
+                                if (buttonNext.disabled) {
+                                    buttonNext.setAttribute("data-popup", "#form");
+                                    buttonNext.disabled = "false";
+                                }
+                            }
+                        }));
+                    },
+                    slideChangeTransitionStart() {
+                        let steps = document.querySelectorAll(".steps-swiper__dots-item");
+                        let buttonNext = document.querySelector(".steps-swiper__btn-next");
+                        console.log(stepsSlider.realIndex);
+                        if (stepsSlider.activeIndex == steps.length - 1) changeButton(buttonNext, true); else changeButton(buttonNext, false);
+                    },
+                    slideChangeTransitionEnd() {
+                        let steps = document.querySelectorAll(".steps-swiper__dots-item");
+                        let buttonNext = document.querySelector(".steps-swiper__btn-next");
+                        console.log(stepsSlider.realIndex);
+                        if (stepsSlider.activeIndex == steps.length - 1) setAttribute(buttonNext, true);
+                    }
+                }
+            });
+            function changeButton(button, remove) {
+                if (true == remove) {
+                    button.removeAttribute("disabled");
+                    button.textContent = "Получить консультацию";
+                } else {
+                    button.removeAttribute("data-popup");
+                    button.textContent = "Следующий шаг";
+                }
+            }
+            function setAttribute(button, setAttr) {
+                if (true == setAttr) button.setAttribute("data-popup", "#form");
+            }
+        }
+        if (document.querySelector(".cases-won-swiper")) new core(".cases-won-swiper", {
+            wrapperClass: "cases-won-swiper__wrapper",
+            slideClass: "cases-won-swiper__slide",
+            modules: [ Navigation, Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 2,
+            spaceBetween: 0,
+            speed: 800,
+            observer: true,
+            observeParents: true,
+            pagination: {
+                el: ".cases-won-swiper .swiper-pagination",
+                clickable: true
+            },
+            navigation: {
+                prevEl: ".cases-won .reviews-navigation .swipe-prev",
+                nextEl: ".cases-won .reviews-navigation .swipe-next"
+            },
+            on: {}
         });
     }
     window.addEventListener("load", (function(e) {
@@ -4276,21 +4366,46 @@
     const da = new DynamicAdapt("max");
     da.init();
     let buttons = document.querySelectorAll(".quiz-step-button");
+    let allSteps = document.querySelectorAll(".quiz__inner");
+    if (0 != allSteps.length) {
+        let lastQuizPageInputs = allSteps[allSteps.length - 1].querySelectorAll("input");
+        lastQuizPageInputs.forEach((function(item) {
+            item.addEventListener("click", (function() {
+                item.closest(".quiz__item").querySelector(".quiz-action").classList.add("active");
+                item.classList.add("active");
+            }));
+        }));
+    }
     buttons.forEach((function(item) {
         item.addEventListener("click", (function() {
-            let allSteps = document.querySelectorAll(".quiz__inner");
             let currentStep = document.querySelector(".quiz__inner.active");
             let currentStepNumber = Number(currentStep.getAttribute("data-step"));
             if (item.classList.contains("quiz__next") && currentStepNumber + 1 < allSteps.length) {
-                let nextEl = allSteps[currentStepNumber + 1];
-                let consultationButton = document.querySelector(".quiz-action");
-                currentStep.classList.remove("active");
-                nextEl.classList.add("active");
-                if (currentStepNumber + 1 == allSteps.length - 1) {
-                    consultationButton.classList.add("active");
-                    consultationButton.classList.remove("progress");
+                let nextStepRadio = allSteps[currentStepNumber + 1].querySelectorAll("input");
+                let radioInput = currentStep.querySelectorAll("input");
+                let radioValid = false;
+                let lastPageActive = false;
+                radioInput.forEach((function(radio) {
+                    if (radio.checked) radioValid = true;
+                    if (currentStepNumber + 1 == allSteps.length - 1) nextStepRadio.forEach((function(radioNext) {
+                        if (radioNext.classList.contains("active")) lastPageActive = true;
+                    }));
+                }));
+                if (radioValid) {
+                    let nextEl = allSteps[currentStepNumber + 1];
+                    let consultationButton = document.querySelector(".quiz-action");
+                    if (currentStepNumber + 1 == allSteps.length - 1 && true == lastPageActive) {
+                        consultationButton.classList.add("active");
+                        consultationButton.classList.remove("progress");
+                    }
+                    currentStep.classList.remove("active");
+                    nextEl.classList.add("active");
+                    if (nextEl.getAttribute("data-step") > 0) consultationButton.classList.add("proggress"); else if (nextEl.getAttribute("data-step") == allSteps.length - 1) consultationButton.classList.remove("proggress");
                 }
+<<<<<<< HEAD
+=======
                 if (nextEl.getAttribute("data-step") > 0) consultationButton.classList.add("proggress"); else if (nextEl.getAttribute("data-step") == allSteps.length - 1) consultationButton.classList.remove("proggress");
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
             } else if (item.classList.contains("quiz__prev") && currentStepNumber - 1 >= 0) {
                 let prevNum = currentStepNumber - 1;
                 let prevEl = allSteps[prevNum];
@@ -4412,9 +4527,25 @@
                 article.forEach((function(item, i) {
                     if (i < activeArticlesNumber) item.classList.add("active");
                 }));
+<<<<<<< HEAD
+                if (article.length == activeArticlesNumber) showMoreBtn.classList.add("hidden");
+            }
+        }));
+        let questionShowMoreButton = document.querySelector(".nine__link-full");
+        if (questionShowMoreButton) {
+            let allQuestionBlocks = document.querySelectorAll(".spollers__item");
+            questionShowMoreButton.addEventListener("click", (function() {
+                allQuestionBlocks.forEach((function(item) {
+                    item.classList.remove("_spoiler-hidden");
+                    questionShowMoreButton.classList.add("hidden");
+                }));
+            }));
+        }
+=======
                 if (article.length == activeArticlesNumber) showMoreBtn.style.display = "none";
             }
         }));
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
     }));
     let popupThanks = document.querySelector(".popup__thanks");
     popupThanks.addEventListener("click", (function(e) {
@@ -4431,7 +4562,11 @@
             if (false == error) {
                 let formData = new FormData(item);
                 item.classList.add("_sending");
+<<<<<<< HEAD
+                let response = await fetch("заменить.php", {
+=======
                 let response = await fetch("#", {
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
                     method: "POST",
                     body: formData
                 });
@@ -4439,12 +4574,29 @@
                     await response.json();
                     let thanksPopup = document.querySelector(".popup__thanks");
                     if (popupActive.classList.contains("popup_show")) popupActive.classList.remove("popup_show");
+<<<<<<< HEAD
+                    if (item.classList.contains("popup__form")) {
+                        let popupWrapper = item.closest(".popup");
+                        if (popupWrapper.classList.contains("popup_show")) popupWrapper.classList.remove("popup_show");
+                    }
+=======
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
                     thanksPopup.classList.add("popup_show");
                     setTimeout((() => {
                         thanksPopup.classList.remove("popup_show");
                     }), 1e4);
                     item.reset();
+<<<<<<< HEAD
+                } else {
+                    if (item.classList.contains("popup__form")) {
+                        let popupWrapper = item.closest(".popup");
+                        if (popupWrapper.classList.contains("popup_show")) popupWrapper.classList.remove("popup_show");
+                    }
+                    alert("Ошибка");
+                }
+=======
                 } else alert("Ошибка");
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
             }
         }
     }));
