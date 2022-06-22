@@ -1,24 +1,67 @@
 let buttons = document.querySelectorAll('.quiz-step-button')
+let allSteps = document.querySelectorAll('.quiz__inner');
+
+if (allSteps.length != 0) {
+    let lastQuizPageInputs = allSteps[allSteps.length - 1].querySelectorAll('input');
+
+    lastQuizPageInputs.forEach(function(item) {
+        item.addEventListener('click', function() {
+            item.closest('.quiz__item').querySelector('.quiz-action').classList.add('active');
+            item.classList.add('active')
+        })
+    })
+}
 
 buttons.forEach(function(item) {
     item.addEventListener('click', function() {
+<<<<<<< HEAD
+=======
         let allSteps = document.querySelectorAll('.quiz__inner');
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
         // let allStepsNumber = document.querySelectorAll('.steps__item');
         let currentStep = document.querySelector('.quiz__inner.active');
         let currentStepNumber = Number(currentStep.getAttribute('data-step'));
     
         if (item.classList.contains('quiz__next') && currentStepNumber + 1 < allSteps.length) {
-            let nextNum = currentStepNumber + 1;
-            let nextEl = allSteps[currentStepNumber + 1];
-            let  consultationButton = document.querySelector('.quiz-action');
+            let nextStepRadio = allSteps[currentStepNumber + 1].querySelectorAll('input');
+            let radioInput = currentStep.querySelectorAll('input');
+            let radioValid = false;
+            let lastPageActive = false
 
-            currentStep.classList.remove('active');
-            nextEl.classList.add('active');
+            radioInput.forEach(function(radio) {
+                if (radio.checked) {
+                    radioValid = true
+                }
+                if (currentStepNumber + 1 == allSteps.length - 1) {
+                    nextStepRadio.forEach(function(radioNext) {
+                        if (radioNext.classList.contains('active')) {
+                            lastPageActive = true;
+                        }
+                    })
+                }
+            })
 
-            if (currentStepNumber + 1 == allSteps.length - 1) {
-                consultationButton.classList.add('active');
-                consultationButton.classList.remove('progress')
+            if (radioValid) {
+                let nextNum = currentStepNumber + 1;
+                let nextEl = allSteps[currentStepNumber + 1];
+                let  consultationButton = document.querySelector('.quiz-action');
+
+                if (currentStepNumber + 1 == allSteps.length - 1 && lastPageActive == true) {
+                    consultationButton.classList.add('active');
+                    consultationButton.classList.remove('progress')
+                }
+
+                currentStep.classList.remove('active');
+                nextEl.classList.add('active');
+
+                if (nextEl.getAttribute('data-step') > 0) {
+                    consultationButton.classList.add('proggress');
+                } else if (nextEl.getAttribute('data-step') == allSteps.length - 1) {
+                    consultationButton.classList.remove('proggress');
+                }
             }
+<<<<<<< HEAD
+=======
 
             if (nextEl.getAttribute('data-step') > 0){
                 consultationButton.classList.add('proggress');
@@ -26,6 +69,7 @@ buttons.forEach(function(item) {
                 consultationButton.classList.remove('proggress');
             }
 
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
         } else if (item.classList.contains('quiz__prev') && currentStepNumber - 1 >= 0) {
             let prevNum = currentStepNumber - 1;
             let prevEl = allSteps[prevNum];
@@ -126,7 +170,7 @@ forms.forEach(function(form){
                     }
                 }
             })
-        })
+        }) 
 })
 
 
@@ -179,6 +223,10 @@ window.addEventListener('DOMContentLoaded', function() {
         var articleNumber = 3;
     }
 
+<<<<<<< HEAD
+    
+=======
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
     activeArticlesNumber = activeArticlesNumber + articleNumber;
     
     article.forEach(function(item, i) {
@@ -188,6 +236,10 @@ window.addEventListener('DOMContentLoaded', function() {
     })
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
     if (showMoreBtn){
         showMoreBtn.addEventListener('click', function() {
             activeArticlesNumber = activeArticlesNumber + articleNumber;
@@ -198,11 +250,31 @@ window.addEventListener('DOMContentLoaded', function() {
                     }
                 })
                 if (article.length == activeArticlesNumber) {
+<<<<<<< HEAD
+                    showMoreBtn.classList.add('hidden')
+=======
                     showMoreBtn.style.display = 'none'
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
                 }
             }
         })
     }
+<<<<<<< HEAD
+    
+    let questionShowMoreButton = document.querySelector('.nine__link-full');
+    
+    if (questionShowMoreButton) {
+        let allQuestionBlocks = document.querySelectorAll('.spollers__item');
+
+        questionShowMoreButton.addEventListener('click', function () {
+            allQuestionBlocks.forEach(function(item) {
+                item.classList.remove('_spoiler-hidden');
+                questionShowMoreButton.classList.add('hidden');
+            })
+        })
+    }
+=======
+>>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 }) 
 
 let popupThanks = document.querySelector('.popup__thanks');

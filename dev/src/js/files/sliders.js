@@ -106,9 +106,9 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			autoHeight: true,
 			speed: 800,
-
+			observer:true,
+			observeParents: true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,
@@ -170,13 +170,38 @@ function initSliders() {
 			*/
 			// События
 			on: {
+				unlock: function() {
+					console.log()
+					let reviewsInner = document.querySelectorAll('.swiper-reviews__info')
+					reviewsInner.forEach((item) => {
+						let reviesContent = item.querySelector('.swiper-reviews__text')
+						let reviesBody = item.querySelector('.swiper-reviews__text-body')
+						let reviesButtonFull = item.querySelector('.swiper-reviews__full')
+						let heightBody = reviesBody.clientHeight;
+						let heightContent = reviesContent.scrollHeight - 2
 
+						if (heightContent >= heightBody) {
+							reviesButtonFull.addEventListener('click', () => {
+								//reviesBody.style.height = heightContent + 'px'
+								if (reviesBody.classList.contains('full-content')) {
+									reviesBody.classList.remove('full-content');
+									reviesButtonFull.textContent = 'Развернуть';
+								} else {
+									reviesBody.classList.add('full-content');
+									reviesButtonFull.textContent = 'Свернуть';
+								}
+							})
+						} else {
+							reviesButtonFull.classList.add('hidden')
+						}
+					})  
+				}
 			}
 		});
 	}
 	if (document.querySelector('.steps-swiper')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.steps-swiper', { // Указываем скласс нужного слайдера
+		let stepsSlider = new Swiper('.steps-swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			wrapperClass:'steps-swiper__wrapper',
@@ -262,7 +287,7 @@ function initSliders() {
 					let steps = document.querySelectorAll('.steps-swiper__dots-item');
 					let active = true;
 
-					steps.forEach(function(e){
+					steps.forEach(function(e, i){
 						if (active) {
 							if (e.classList.contains('active__dots')) {
 								active = false
@@ -274,8 +299,129 @@ function initSliders() {
 								e.classList.remove('active__dots')
 							}
 						}
+						if (i == steps.length) {
+							let buttonNext = document.querySelector('.steps-swiper__btn-next');
+							console.log()
+							if (buttonNext.disabled) {
+								buttonNext.setAttribute('data-popup', '#form');
+								buttonNext.disabled = 'false'
+							}
+						}
 					})
 				},
+				slideChangeTransitionStart() {
+					let steps = document.querySelectorAll('.steps-swiper__dots-item');
+					let buttonNext = document.querySelector('.steps-swiper__btn-next');
+						console.log(stepsSlider.realIndex)
+					if (stepsSlider.activeIndex == steps.length - 1) {
+						changeButton(buttonNext, true)
+					} else {
+						changeButton(buttonNext, false)
+					}
+
+				},
+				slideChangeTransitionEnd() {
+					let steps = document.querySelectorAll('.steps-swiper__dots-item');
+					let buttonNext = document.querySelector('.steps-swiper__btn-next');
+						console.log(stepsSlider.realIndex)
+					if (stepsSlider.activeIndex == steps.length - 1) {
+						setAttribute(buttonNext, true)
+					}
+				},
+			}
+		});
+		function changeButton (button, remove) {
+			if (remove == true) {
+				button.removeAttribute('disabled');
+				button.textContent = 'Получить консультацию';
+			} else {
+				button.removeAttribute('data-popup');
+				button.textContent = 'Следующий шаг';
+			}
+		}
+		function setAttribute (button, setAttr) {
+			if (setAttr == true) {
+				button.setAttribute('data-popup', '#form');
+			}
+		}
+	}
+	if (document.querySelector('.cases-won-swiper')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.cases-won-swiper', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			wrapperClass:'cases-won-swiper__wrapper',
+			slideClass:'cases-won-swiper__slide',
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 2,
+			spaceBetween: 0,
+			speed: 800,
+			observer:true,
+			observeParents: true,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			
+			pagination: {
+			 	el: '.cases-won-swiper .swiper-pagination',
+			 	clickable: true,
+			},
+			
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.cases-won .reviews-navigation .swipe-prev',
+				nextEl: '.cases-won .reviews-navigation .swipe-next',
+			},
+
+			// Брейкпоинты
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// События
+			on: {
+
 			}
 		});
 	}
