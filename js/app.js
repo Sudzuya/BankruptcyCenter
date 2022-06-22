@@ -4241,6 +4241,24 @@
                 prevEl: ".cases-won .reviews-navigation .swipe-prev",
                 nextEl: ".cases-won .reviews-navigation .swipe-next"
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1100: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                }
+            },
             on: {}
         });
     }
@@ -4530,6 +4548,7 @@
         let target = e.target;
         if (target.classList.contains("popup__close") || target.classList.contains("popup__btn")) popupThanks.classList.remove("popup_show");
     }));
+    document.querySelector(".breadcrumbs").querySelector(".breadcrumbs__this-page").textContent = document.title;
     const form_form = document.querySelectorAll(".form");
     form_form.forEach((function(item) {
         item.addEventListener("submit", formSend);
