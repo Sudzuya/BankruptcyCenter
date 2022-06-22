@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Проверить долги"
+	}) 
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page debts">
+                @@include('html/_breadcrumbs.html',{})
+                <div class="check-debts">
+                    <div class="check-debts__container">
+                        <div class="check-debts__body">
+                            <div class="check-debts__title title">
+                                Проверить долги у приставов по фамилии
+                            </div>
+                            <div class="check-debts__form form-check">
+                                <div class="form-check__content">
+                                    <div class="form-check__title border-style">
+                                        Проверить долги по базе судебных приставов
+                                    </div>
+                                    <div class="form-check__text">
+                                        Через наш виджет вы можете проверить наличие задолженностей по базе исполнительных производств ФССП России. Заполните поля ниже и узнайте, есть ли долги прямо сейчас.
+                                    </div>
+                                    <form action="" class="form-check__body">
+                                        <div class="form-check__input-body">
+                                            <label for="" class="form-check__label">Территориальные органы</label>
+                                            <select name="form[]" class="form-check__select">
+                                                <option value="1" disabled selected>Выберите регион</option>
+                                                <option value="2">Пункт №1</option>
+                                                <option value="3">Пункт №2</option>
+                                                <option value="4">Пункт №3</option>
+                                                <option value="5">Пункт №4</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-check__input-body">
+                                            <label for="" class="form-check__label">Введите свою фамилию</label>
+                                            <input type="text" placeholder="Введите свою фамилию" class="form-check__input">
+                                        </div>
+                                        <div class="form-check__input-body">
+                                            <label for="" class="form-check__label">Введите свое имя</label>
+                                            <input type="text" placeholder="Введите свою фамилию" class="form-check__input">
+                                        </div>
+                                        <div class="form-check__input-body">
+                                            <label for="" class="form-check__label">Введите свое отчество</label>
+                                            <input type="text" placeholder="Введите свою фамилию" class="form-check__input">
+                                        </div>
+                                        <div class="form-check__input-body">
+                                            <label for="" class="form-check__label">Территориальные органы</label>
+                                            <input type="date" placeholder="Введите свою фамилию" class="form-check__input">
+                                        </div>
+                                        <div class="form-check__check">
+                                            <input class="check" id="chek" checked required type="checkbox">
+                                            <label for="chek">
+                                                <p>Отправляя форму, я соглашаюсь на <br><a href="#" data-popup="#policy">обработку персональных данных</a></p> 
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="form-check__btn button-blue">
+                                            Найти
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="check-debts__text">
+                                <p>Сведения о долгах по исполнительному производству, открываемого по делам должников — физических лиц — размещаются в банке данных Федеральной службы судебных приставов (ФССП). Эта информация доступна любому заинтересованному лицу, а получить ее можно, введя в строку поискового запроса фамилию и ИНН должника.
+                                    <br><br>
+                                    По отдельным видам обязательств сведения о долгах физических лиц можно проверить через другие онлайн-сервисы — по картотеке судебных дел, на сайте ФНС России и ГИБДД. Наш сервис проверки долгов позволяет получить точную, актуальную и достоверную информацию по всем производствам, возбужденным ФССП.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @@include('html/_reviews.html',{}) 
+                @@include('html/_ourTeam.html',{}) 
+                <div class="footer-form">
+                    <div class="footer-form__container">
+                        <div class="footer-form__body">
+                            <div class="footer-form__content">
+                                @@include('html/_footerInfo.html',{}) 
+                                @@include('html/_form.html',{}) 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_popup.htm',{})
+        @@include('html/_js.htm',{})
+    </body>
+</html>

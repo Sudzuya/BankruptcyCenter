@@ -4,10 +4,6 @@
         padding-top: 80px;
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 a{
     font-family: 'Manrope';
     font-weight: 500;
@@ -175,7 +171,34 @@ button{
     }
 }
 
+
+
 .advantages-list{
+    &.numbered{
+        counter-reset: ol-number;
+        margin-bottom: 20px;
+        .advantages-list__item{
+            list-style: none;
+            &::before{
+                display: none;
+            }
+            &::after{
+                content: counter(ol-number);
+                counter-increment: ol-number;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 24px;
+                width: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                border: 0.75px solid #1565D8;
+                border-radius: 50%;
+            }
+        }
+    }
     &__item{
         position: relative;
         padding-left: 40px;

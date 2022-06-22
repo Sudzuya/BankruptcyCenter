@@ -16,7 +16,6 @@
     .bankruptcy-theme{
         display: block;
     }
-<<<<<<< HEAD
     .tabs-faq {
         margin-bottom: 64px;
             &__container {
@@ -116,7 +115,8 @@
                 p{
                     margin-right: 4px;
                 }
-                span{
+                a{
+                    font-weight: 600;
                     color: #1565D8;
                 }
             }
@@ -177,6 +177,17 @@
                 margin-bottom: 20px;
             }
         
+            &__list-mark{
+                margin-bottom: 20px;
+            }
+
+            &__list-title{
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 28px;
+                margin-bottom: 16px;
+            }
+
             &__download-file {
                 padding: 19px;
                 display: flex;
@@ -357,8 +368,6 @@
         }
         
         
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 }
 
 .articles-bankruptcy {

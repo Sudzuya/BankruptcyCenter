@@ -4124,19 +4124,6 @@
             slidesPerView: 1,
             spaceBetween: 0,
             speed: 800,
-<<<<<<< HEAD
-=======
-            navigation: {
-                prevEl: ".reviews-navigation .swipe-prev",
-                nextEl: ".reviews-navigation .swipe-next"
-            },
-            on: {}
-        });
-        if (document.querySelector(".steps-swiper")) new core(".steps-swiper", {
-            wrapperClass: "steps-swiper__wrapper",
-            slideClass: "steps-swiper__slide",
-            modules: [ Navigation, Pagination ],
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
             observer: true,
             observeParents: true,
             navigation: {
@@ -4378,6 +4365,7 @@
     }
     buttons.forEach((function(item) {
         item.addEventListener("click", (function() {
+            let allSteps = document.querySelectorAll(".quiz__inner");
             let currentStep = document.querySelector(".quiz__inner.active");
             let currentStepNumber = Number(currentStep.getAttribute("data-step"));
             if (item.classList.contains("quiz__next") && currentStepNumber + 1 < allSteps.length) {
@@ -4402,10 +4390,6 @@
                     nextEl.classList.add("active");
                     if (nextEl.getAttribute("data-step") > 0) consultationButton.classList.add("proggress"); else if (nextEl.getAttribute("data-step") == allSteps.length - 1) consultationButton.classList.remove("proggress");
                 }
-<<<<<<< HEAD
-=======
-                if (nextEl.getAttribute("data-step") > 0) consultationButton.classList.add("proggress"); else if (nextEl.getAttribute("data-step") == allSteps.length - 1) consultationButton.classList.remove("proggress");
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
             } else if (item.classList.contains("quiz__prev") && currentStepNumber - 1 >= 0) {
                 let prevNum = currentStepNumber - 1;
                 let prevEl = allSteps[prevNum];
@@ -4527,7 +4511,6 @@
                 article.forEach((function(item, i) {
                     if (i < activeArticlesNumber) item.classList.add("active");
                 }));
-<<<<<<< HEAD
                 if (article.length == activeArticlesNumber) showMoreBtn.classList.add("hidden");
             }
         }));
@@ -4541,11 +4524,6 @@
                 }));
             }));
         }
-=======
-                if (article.length == activeArticlesNumber) showMoreBtn.style.display = "none";
-            }
-        }));
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
     }));
     let popupThanks = document.querySelector(".popup__thanks");
     popupThanks.addEventListener("click", (function(e) {
@@ -4562,11 +4540,7 @@
             if (false == error) {
                 let formData = new FormData(item);
                 item.classList.add("_sending");
-<<<<<<< HEAD
                 let response = await fetch("заменить.php", {
-=======
-                let response = await fetch("#", {
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
                     method: "POST",
                     body: formData
                 });
@@ -4574,19 +4548,15 @@
                     await response.json();
                     let thanksPopup = document.querySelector(".popup__thanks");
                     if (popupActive.classList.contains("popup_show")) popupActive.classList.remove("popup_show");
-<<<<<<< HEAD
                     if (item.classList.contains("popup__form")) {
                         let popupWrapper = item.closest(".popup");
                         if (popupWrapper.classList.contains("popup_show")) popupWrapper.classList.remove("popup_show");
                     }
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
                     thanksPopup.classList.add("popup_show");
                     setTimeout((() => {
                         thanksPopup.classList.remove("popup_show");
                     }), 1e4);
                     item.reset();
-<<<<<<< HEAD
                 } else {
                     if (item.classList.contains("popup__form")) {
                         let popupWrapper = item.closest(".popup");
@@ -4594,9 +4564,6 @@
                     }
                     alert("Ошибка");
                 }
-=======
-                } else alert("Ошибка");
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
             }
         }
     }));

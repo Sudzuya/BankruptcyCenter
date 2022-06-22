@@ -14,12 +14,9 @@ form.forEach(function (item) {
       let formData = new FormData(item);
       
       item.classList.add('_sending');
-  
-<<<<<<< HEAD
+
       let response = await fetch('заменить.php', {
-=======
-      let response = await fetch('#', {
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
+
         method: 'POST',
         body: formData
       });
@@ -31,8 +28,6 @@ form.forEach(function (item) {
         if (popupActive.classList.contains('popup_show')) {
             popupActive.classList.remove('popup_show')
         }
-<<<<<<< HEAD
-
         if (item.classList.contains('popup__form')) {
           let popupWrapper = item.closest('.popup');
 
@@ -41,9 +36,6 @@ form.forEach(function (item) {
           }
         }
 
-=======
-        
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
         thanksPopup.classList.add('popup_show');
         setTimeout (() => {
           thanksPopup.classList.remove('popup_show')
@@ -51,7 +43,6 @@ form.forEach(function (item) {
 
         item.reset();
       } else {
-<<<<<<< HEAD
         if (item.classList.contains('popup__form')) {
           let popupWrapper = item.closest('.popup');
 
@@ -59,8 +50,7 @@ form.forEach(function (item) {
             popupWrapper.classList.remove('popup_show')
           }
         }
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
+
         alert('Ошибка');
       }
     }

@@ -775,8 +775,6 @@ button {
   opacity: 0.2;
 }
 
-<<<<<<< HEAD
-=======
 .tabs-faq {
   margin-bottom: 64px;
 }
@@ -1120,7 +1118,6 @@ button {
      object-fit: cover;
 }
 
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 .header__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2880,7 +2877,6 @@ button {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 @supports (padding-top: clamp( 1.875rem , -10.3472222222rem  +  25.462962963vw , 8.75rem )) {
   .our-team {
     padding-top: clamp( 1.875rem , -10.3472222222rem  +  25.462962963vw , 8.75rem );
@@ -2890,17 +2886,6 @@ button {
 @supports not (padding-top: clamp( 1.875rem , -10.3472222222rem  +  25.462962963vw , 8.75rem )) {
   .our-team {
     padding-top: calc(1.875rem + 6.875 * (100vw - 48rem) / 27);
-=======
-@supports (margin-bottom: clamp( 1.875rem , -21.6964285714rem  +  49.1071428571vw , 8.75rem )) {
-  .our-team {
-    margin-bottom: clamp( 1.875rem , -21.6964285714rem  +  49.1071428571vw , 8.75rem );
-  }
-}
-
-@supports not (margin-bottom: clamp( 1.875rem , -21.6964285714rem  +  49.1071428571vw , 8.75rem )) {
-  .our-team {
-    margin-bottom: calc(1.875rem + 6.875 * (100vw - 48rem) / 14);
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   }
 }
 
@@ -3545,13 +3530,8 @@ button {
   margin-bottom: 8px;
 }
 
-<<<<<<< HEAD
 .reviews .swiper-reviews__text-body {
   height: 180px;
-=======
-.reviews .swiper-reviews__text {
-  font-size: 16px;
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   margin-bottom: 21px;
   overflow: hidden;
 }
@@ -3909,7 +3889,6 @@ button {
   }
 }
 
-<<<<<<< HEAD
 .footer-form::before {
   content: "";
   position: absolute;
@@ -3924,8 +3903,6 @@ button {
   z-index: -1;
 }
 
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 .footer-form__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4027,7 +4004,6 @@ button {
   display: block;
 }
 
-<<<<<<< HEAD
 .articles .tabs-faq {
   margin-bottom: 64px;
 }
@@ -4382,8 +4358,6 @@ button {
      object-fit: cover;
 }
 
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 @supports (margin-bottom: clamp( 2.1875rem , -7.4553571429rem  +  20.0892857143vw , 5rem )) {
   .articles-bankruptcy {
     margin-bottom: clamp( 2.1875rem , -7.4553571429rem  +  20.0892857143vw , 5rem );
@@ -4663,7 +4637,6 @@ button {
      object-fit: contain;
 }
 
-<<<<<<< HEAD
 .cost-services {
   background: #F4F9FF;
   padding: 80px;
@@ -5028,8 +5001,6 @@ button {
   font-family: "Manrope";
 }
 
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 #form-quiz.popup_show {
   opacity: 1;
   pointer-events: auto;
@@ -5402,7 +5373,6 @@ button {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
-<<<<<<< HEAD
 
   .two-block::before,
   .two-block::after {
@@ -5428,8 +5398,6 @@ button {
   .footer-form::before {
     display: none;
   }
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
 }
 
 @media (max-width: 992px) {
@@ -5475,13 +5443,10 @@ button {
 
   .breadcrumbs {
     margin-top: 15px;
-<<<<<<< HEAD
-=======
   }
 
   .tabs__btn {
     padding: 8px 50px;
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   }
 
   .first-block__body {
@@ -5605,13 +5570,10 @@ button {
     }
 }
 
-<<<<<<< HEAD
   .articles .tabs__btn {
     padding: 8px 50px;
   }
 
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   .articles-bankruptcy.bankruptcy-theme::before {
     display: none;
   }
@@ -5666,8 +5628,6 @@ button {
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-=======
   .tabs {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -5720,7 +5680,6 @@ button {
     padding: 8px calc(43px + 157 * (100vw - 320px) / 448);
   }
 
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   .form-city.full .form-city__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33%;
@@ -5743,7 +5702,6 @@ button {
     }
 }
 
-<<<<<<< HEAD
   .articles .tabs {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -5796,8 +5754,6 @@ button {
     padding: 8px calc(43px + 157 * (100vw - 320px) / 448);
   }
 
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   .articles-bankruptcy__text {
     padding: 15px 12px;
   }
@@ -6119,7 +6075,6 @@ button {
     font-size: 14px;
   }
 
-<<<<<<< HEAD
   .articles .tabs__download-file {
     padding: 12px 12px 12px 46px;
   }
@@ -6140,8 +6095,6 @@ button {
     }
 }
 
-=======
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   .article__item {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -6197,8 +6150,6 @@ button {
     margin-left: 0px;
   }
 
-<<<<<<< HEAD
-=======
   .tabs__rate {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -6211,7 +6162,6 @@ button {
             flex: 0 0 100%;
   }
 
->>>>>>> d2c6428594bb17b77c7e56ffea90b73ecab20991
   .location__text {
     font-size: 16px;
   }
