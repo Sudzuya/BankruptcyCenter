@@ -403,19 +403,19 @@ function initSliders() {
 				
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 20,
+					spaceBetween: 10,
 				},
-				768: {
+				576: {
 					slidesPerView: 2,
-					spaceBetween: 30,
+					spaceBetween: 10,
 				},
 				992: {
 					slidesPerView: 3,
-					spaceBetween: 30,
+					spaceBetween: 10,
 				},
 				1100: {
 					slidesPerView: 2,
-					spaceBetween: 30,
+					spaceBetween: 10,
 				},
 			},
 			

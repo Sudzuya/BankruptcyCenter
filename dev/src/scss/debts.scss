@@ -1,5 +1,6 @@
 .check-debts {
-margin-bottom: 120px;
+    @include adaptiveValue("margin-bottom", 120 , 60, 600, 320, 1 );
+
     &__container {
     }
 
@@ -16,6 +17,8 @@ margin-bottom: 120px;
     }
 
     &__text {
+        @include adaptiveValue("font-size", 16 , 14, 600, 320, 1 );
+
     }
 }
 .form-check {
@@ -23,6 +26,14 @@ margin-bottom: 120px;
     margin-bottom: 32px;
     background: #F4F9FF;
     border-left: 4px solid #1565D8;
+    
+    @media (max-width:576px) {
+        padding: 15px 15px 15px 11px;
+    }
+    @media (max-width:440px) {
+        margin: 0 -15px;
+        margin-bottom: 15px;
+    }
     &__content{
         max-width: 850px;
         width: 100%;
@@ -31,16 +42,16 @@ margin-bottom: 120px;
     &__title {
         font-family: 'Manrope';
         font-weight: 600;
-        font-size: 36px;
         line-height: 110%;
         margin-bottom: 16px;
+        @include adaptiveValue("font-size", 36 , 20, 600, 320, 1 );
     }
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
         line-height: 28px;
-        margin-bottom: 30px;
+        @include adaptiveValue("font-size", 16 , 14, 600, 320, 1 );
+        @include adaptiveValue("margin-bottom", 30 , 16, 600, 320, 1 );
     }
 
     &__body {
@@ -51,8 +62,7 @@ margin-bottom: 120px;
     &__input-body {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 30px;
-        
+        @include adaptiveValue("margin-bottom", 30 , 16, 600, 320, 1 );
     }
 
     [type="date"]{
@@ -66,22 +76,69 @@ margin-bottom: 120px;
         margin-bottom: 4px;
     }
 
-    &__select {
+    .select{
         flex: 0 0 100%;
-        background: #FFFFFF;
-        border: 1px solid #C3CAD9;
-        border-radius: 4px;
-        padding: 13px 15px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        color: #959EAD;
-        option{
-            &:disabled{
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 22px;
+        &._select-open{
+            .select__title{
+                &::before{
+                    transform: translateY(-50%) rotate(-90deg);
+                }
+            }
+        }
+        &__title{
+            flex: 0 0 100%;
+            background: #FFFFFF;
+            border: 1px solid #C3CAD9;
+            border-radius: 4px;
+            padding: 13px 15px;
+            font-weight: 400;
+            line-height: 22px;
+            width: 100%;
+            text-align: start;
+            position: relative;
+            @include adaptiveValue("font-size", 16 , 14, 600, 320, 1 );
+            &::before{
+                content: "";
+                position: absolute;
+                top: 50%;
+                @include adaptiveValue("height", 20 , 10, 600, 320, 1 );
+                @include adaptiveValue("width", 20 , 10, 600, 320, 1 );
+                right: 15px;
+                padding: 7px;
+                background-image: url('@img/icon/arrowright.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                transform: translateY(-50%) rotate(90deg);
+                transition: transform .5s ease;
+            }
+        }
+        &__body{
+            position: relative;
+        }
+        &__content{
+            &.disabled{
                 color: #959EAD;
+            }
+        }
+        &__options{
+            position: absolute;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            width: 100%;
+        }
+        button[hidden]{
+            display: none;
+        }
+        &__option{
+            display: block;
+            width: 100%;
+            text-align: start;
+            &.disabled{
+                display: none;
+            }
+            &:not(:last-child){
+                margin-bottom: 16px;
             }
         }
     }
@@ -93,16 +150,20 @@ margin-bottom: 120px;
         border-radius: 4px;
         padding: 13px 15px;
         font-weight: 400;
-        font-size: 16px;
         line-height: 22px;
+        @include adaptiveValue("font-size", 16 , 14, 600, 320, 1 );
     }
 
     &__check {
-        margin-bottom: 30px;
+        @include adaptiveValue("font-size", 16 , 14, 600, 320, 1 );
+        @include adaptiveValue("margin-bottom", 30 , 16, 600, 320, 1 );
     }
 
     &__btn {
         width: 312px;
+        @media (max-width:440px) {
+            width: 100%;
+        }
     }
 
     input[type=checkbox]{

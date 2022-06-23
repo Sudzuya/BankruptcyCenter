@@ -259,5 +259,7 @@ popupThanks.addEventListener('click', function(e) {
         popupThanks.classList.remove('popup_show')
     }
 })
-
-let breadcrumbs = document.querySelector('.breadcrumbs').querySelector('.breadcrumbs__this-page').textContent = document.title
+let breadcrumbs  = '';
+if (breadcrumbs.length != 0){
+    breadcrumbs = document.querySelector('.breadcrumbs').querySelector('.breadcrumbs__this-page').textContent = document.title
+}
