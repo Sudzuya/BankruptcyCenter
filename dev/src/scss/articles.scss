@@ -13,6 +13,12 @@
 }
 
 .articles{
+    @media (max-width:1024px) {
+        @include adaptiveValue("padding-top",80 , 60, 1024, 768, 1 );  
+    }
+    .breadcrumbs{
+        margin-top: 20px;
+    }
     .bankruptcy-theme{
         display: block;
     }
@@ -38,8 +44,16 @@
                 gap: 60px;
             }
         
+            &__navigation-inner{
+                position: relative;
+                width: 272px;
+            }
+
             &__navigation-body {
                 flex: 0 0 auto;
+                @media (max-width:768px) {
+                    position: static !important;
+                }
             }
         
             &__navigation-title {
@@ -74,6 +88,7 @@
             &__title {
                 font-weight: 500;
                 text-align: start;
+                cursor: pointer;
                 &._tab-active{
                     font-weight: 700;
                     color: #1565D8;

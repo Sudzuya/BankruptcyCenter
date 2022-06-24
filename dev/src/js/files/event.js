@@ -263,3 +263,18 @@ let breadcrumbs  = '';
 if (breadcrumbs.length != 0){
     breadcrumbs = document.querySelector('.breadcrumbs').querySelector('.breadcrumbs__this-page').textContent = document.title
 }
+
+
+let stickyNav = document.querySelector('.articles .tabs__navigation-inner');
+    if(window.innerWidth <= 1024){
+        stickyNav.setAttribute('data-sticky-header', '')
+    } else{
+        stickyNav.removeAttribute('data-sticky-header')
+    }
+window.addEventListener('resize', function(){
+    if(window.innerWidth <= 1024){
+        stickyNav.setAttribute('data-sticky-header', '')
+    }else{
+        stickyNav.removeAttribute('data-sticky-header')
+    }
+})

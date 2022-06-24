@@ -115,6 +115,10 @@ h6 {
   font-size: inherit;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @supports (font-size: clamp( 1rem , 0.4072966507rem  +  0.956937799vw , 1.125rem )) {
   body {
     font-size: clamp( 1rem , 0.4072966507rem  +  0.956937799vw , 1.125rem );
@@ -4035,6 +4039,10 @@ button {
   display: flex;
 }
 
+.articles .breadcrumbs {
+  margin-top: 20px;
+}
+
 .articles .bankruptcy-theme {
   display: block;
 }
@@ -4073,6 +4081,11 @@ button {
   gap: 60px;
 }
 
+.articles .tabs__navigation-inner {
+  position: relative;
+  width: 272px;
+}
+
 .articles .tabs__navigation-body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -4108,6 +4121,7 @@ button {
 .articles .tabs__title {
   font-weight: 500;
   text-align: start;
+  cursor: pointer;
 }
 
 .articles .tabs__title._tab-active {
@@ -5940,6 +5954,18 @@ button {
   .footer-form::before {
     display: none;
   }
+
+@supports (padding-top: clamp( 3.75rem , 0.0000000625rem  +  7.8125vw , 5rem )) {
+    .articles {
+      padding-top: clamp( 3.75rem , 0.0000000625rem  +  7.8125vw , 5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 3.75rem , 0.0000000625rem  +  7.8125vw , 5rem )) {
+    .articles {
+      padding-top: calc(3.75rem + 1.25 * (100vw - 48rem) / 16);
+    }
+}
 }
 
 @media (max-width: 992px) {
@@ -6271,6 +6297,10 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .articles .tabs__navigation-body {
+    position: static !important;
   }
 
   .articles .tabs__navigation-title {

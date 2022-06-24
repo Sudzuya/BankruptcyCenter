@@ -5051,6 +5051,11 @@
     }));
     let breadcrumbs = "";
     if (0 != breadcrumbs.length) breadcrumbs = document.querySelector(".breadcrumbs").querySelector(".breadcrumbs__this-page").textContent = document.title;
+    let stickyNav = document.querySelector(".articles .tabs__navigation-inner");
+    if (window.innerWidth <= 1024) stickyNav.setAttribute("data-sticky-header", ""); else stickyNav.removeAttribute("data-sticky-header");
+    window.addEventListener("resize", (function() {
+        if (window.innerWidth <= 1024) stickyNav.setAttribute("data-sticky-header", ""); else stickyNav.removeAttribute("data-sticky-header");
+    }));
     const form_form = document.querySelectorAll(".form");
     form_form.forEach((function(item) {
         item.addEventListener("submit", formSend);
