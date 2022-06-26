@@ -1090,17 +1090,8 @@ button {
   width: 24px;
 }
 
-.tabs__rate-like::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url("../img/icon/like.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+.tabs__rate-like.active svg path {
+  fill: green;
 }
 
 .tabs__rate-dislike {
@@ -1109,17 +1100,8 @@ button {
   width: 24px;
 }
 
-.tabs__rate-dislike::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url("../img/icon/dislike.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+.tabs__rate-dislike.active svg path {
+  fill: red;
 }
 
 .tabs__rate-total {
@@ -4162,7 +4144,7 @@ button {
   margin-right: 4px;
 }
 
-.articles .tabs__author-title-main a {
+.articles .tabs__author-title-main span {
   font-weight: 600;
   color: #1565D8;
 }
@@ -4352,36 +4334,10 @@ button {
   width: 24px;
 }
 
-.articles .tabs__rate-like::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url("../img/icon/like.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 .articles .tabs__rate-dislike {
   position: relative;
   height: 24px;
   width: 24px;
-}
-
-.articles .tabs__rate-dislike::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url("../img/icon/dislike.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .articles .tabs__rate-total {

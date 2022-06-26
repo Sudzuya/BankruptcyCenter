@@ -130,7 +130,7 @@
                 p{
                     margin-right: 4px;
                 }
-                a{
+                span{
                     font-weight: 600;
                     color: #1565D8;
                 }
@@ -314,36 +314,36 @@
                 position: relative;
                 height: 24px;
                 width: 24px;
-                &::before{
-                    content:"";
-                    position: absolute;
-                    left: 0px;
-                    top: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-image: url('@img/icon/like.svg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
+                // &::before{
+                //     content:"";
+                //     position: absolute;
+                //     left: 0px;
+                //     top: 0;
+                //     height: 100%;
+                //     width: 100%;
+                //     background-image: url('@img/icon/like.svg');
+                //     background-position: center;
+                //     background-repeat: no-repeat;
+                //     background-size: contain;
+                // }
             }
         
             &__rate-dislike {
                 position: relative;
                 height: 24px;
                 width: 24px;
-                &::before{
-                    content:"";
-                    position: absolute;
-                    left: 0px;
-                    top: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-image: url('@img/icon/dislike.svg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
+                // &::before{
+                //     content:"";
+                //     position: absolute;
+                //     left: 0px;
+                //     top: 0;
+                //     height: 100%;
+                //     width: 100%;
+                //     background-image: url('@img/icon/dislike.svg');
+                //     background-position: center;
+                //     background-repeat: no-repeat;
+                //     background-size: contain;
+                // }
             }
         
             &__rate-total {
